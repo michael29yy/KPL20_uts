@@ -7,11 +7,9 @@ class Pedoman extends CI_Controller{
 		if (!$this->session->userdata('username')){
 			redirect('HalamanLogin');
 		}
-		else{
-                    if ($this->session->userdata('id_role') != 29) {
-                        redirect('HalamanLogin');
-                    }
-		}
+                if ($this->session->userdata('id_role') != 29) {
+                    redirect('HalamanLogin');
+                }
 
 		$this->load->model('pedoman_model');
 		$this->load->model('log_activity_model');

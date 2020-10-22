@@ -8,12 +8,10 @@ class PerizinanUmum extends CI_Controller
         if (!$this->session->userdata('username')){
             redirect('HalamanLogin');
         }
-        else{
-            if ($this->session->userdata('id_role') != 29) {
-                redirect('HalamanLogin');
-            }
+        if ($this->session->userdata('id_role') != 29) {
+            redirect('HalamanLogin');
         }
-
+ 
         date_default_timezone_set("Asia/Jakarta");
         $this->load->model('umum2_model');
         $this->load->model('log_activity_model');

@@ -7,13 +7,11 @@ class Dashboard extends CI_Controller
 		if (!$this->session->userdata('username')){
 			redirect('HalamanLogin');
 		}
-		else{
-                    if ($this->session->userdata('id_role') != 29) {
-			$this->session->unset_userdata('username');
-			$this->session->set_flashdata('error', 'Anda Tidak Memiliki Akses');
-                        redirect('HalamanLogin');
-                     }
-		}
+                if ($this->session->userdata('id_role') != 29) {
+                    $this->session->unset_userdata('username');
+                    $this->session->set_flashdata('error', 'Anda Tidak Memiliki Akses');
+                    redirect('HalamanLogin');
+                 }
 
 		$this->load->model('dashboard_model');
 	}
