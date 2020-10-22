@@ -1,5 +1,4 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
 
 class Pedoman extends CI_Controller{
 
