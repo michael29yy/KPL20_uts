@@ -102,8 +102,8 @@ class Sewa extends CI_Controller
     public function tambah_sewa(){
     	$this->load->model("sewa_model");
 
-        $files = $_FILES;
-    	$filetam = isset($files['file_sewa']['name']);
+        $files = isset($_FILES['file_sewa']);
+    	$filetam = $files['name'];
 
     	$config['upload_path'] = './assets/files';
     	$config['allowed_types'] = '*';
