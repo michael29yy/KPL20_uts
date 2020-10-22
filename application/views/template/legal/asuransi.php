@@ -67,11 +67,11 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu :</h6>
-                        <a class="collapse-item" href="<?= \base_url() ;?>Leasing">Leasing </a>
-                        <a class="collapse-item" href="<?= \base_url() ;?>Asuransi">Asuransi</a>
-                        <a class="collapse-item" href="<?= \base_url() ;?>Sewa">Sewa Unit</a>
-                        <a class="collapse-item" href="<?= \base_url() ;?>Jualbeli">Jual Beli</a>
-                        <a class="collapse-item" href="<?= \base_url() ;?>PerjanjianUmum">Umum</a>
+                        <a class="collapse-item" href="<?= esc_url(base_url()) ;?>Leasing">Leasing </a>
+                        <a class="collapse-item" href="<?= esc_url(base_url()) ;?>Asuransi">Asuransi</a>
+                        <a class="collapse-item" href="<?= esc_url(base_url()) ;?>Sewa">Sewa Unit</a>
+                        <a class="collapse-item" href="<?= esc_url(base_url()) ;?>Jualbeli">Jual Beli</a>
+                        <a class="collapse-item" href="<?= esc_url(base_url()) ;?>PerjanjianUmum">Umum</a>
                     </div>
                 </div>
             </li>
