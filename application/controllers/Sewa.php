@@ -102,15 +102,15 @@ class Sewa extends CI_Controller
     public function tambah_sewa(){
     	$this->load->model("sewa_model");
 
-
-    	$file = $_FILES['file_sewa']['name'];
+        $files = $_FILES;
+    	$filetam = isset($files['file_sewa']['name']);
 
     	$config['upload_path'] = './assets/files';
     	$config['allowed_types'] = '*';
     	$this->load->library('upload', $config);
     	$this->upload->do_upload('file_sewa');
 
-    	$file = $this->upload->data('file_name');
+    	$filetam = $this->upload->data('file_name');
 
     	$data = array(
     		"no_perjanjian" =>$this->input->post("no_perjanjian"),
@@ -122,7 +122,7 @@ class Sewa extends CI_Controller
     		"keterangan" =>$this->input->post("keterangan"),
     		"status_kontrak" =>$this->input->post("status_kontrak"),
     		"catatan" =>$this->input->post("catatan"),
-    		"file" => $file
+    		"file" => $filetam
     	);
 
         $nik = $this->session->userdata('username');
