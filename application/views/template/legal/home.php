@@ -87,11 +87,11 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu :</h6>
-                        <a class="collapse-item" href="<?= base_url("KLH");?>">KLH</a>
-                        <a class="collapse-item" href="<?= base_url("B3");?>">B3</a>
-                        <a class="collapse-item" href="<?= base_url("STNK");?>">STNK</a>
-                        <a class="collapse-item" href="<?= base_url("KIR");?>">KIR</a>
-                        <a class="collapse-item" href="<?= base_url("PerizinanUmum");?>">Umum</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>KLH">KLH</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>B3">B3</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>STNK">STNK</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>KIR">KIR</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>PerizinanUmum">Umum</a>
                     </div>
                 </div>
             </li>
