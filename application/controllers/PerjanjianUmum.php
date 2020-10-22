@@ -37,7 +37,7 @@ class PerjanjianUmum extends CI_Controller
 
     public function import_umum(){
         if(isset($_FILES["file_excel_umum"]["name"])){
-            $path = $_FILES["file_excel_umum"]["tmp_name"];
+            $path = isset($_FILES["file_excel_umum"]["tmp_name"]);
             $object = PHPExcel_IOFactory::load($path);
 
             foreach ($object->getWorksheetIterator() as $worksheet) {
@@ -104,7 +104,7 @@ class PerjanjianUmum extends CI_Controller
     	$this->load->model("umum1_model");
 
 
-    	$file = $_FILES['file_umum']['name'];
+    	$file = isset($_FILES['file_umum']['name']);
 
     	$config['upload_path'] = './assets/files';
     	$config['allowed_types'] = '*';
@@ -156,7 +156,7 @@ class PerjanjianUmum extends CI_Controller
     public function update_umum(){
         $this->load->model("umum1_model");
 
-        $file = $_FILES['file_umum']['name'];
+        $file = isset($_FILES['file_umum']['name']);
 
         $config['upload_path'] = './assets/files';
         $config['allowed_types'] = '*';
@@ -193,7 +193,7 @@ class PerjanjianUmum extends CI_Controller
             "file" => $cekfile     
         );
 
-        $id = $this->input->post("hidden_id");
+        $idhd = $this->input->post("hidden_id");
         $nik = $this->session->userdata('username');
         $datanik = $this->log_activity_model->get_data_nik($nik);
         foreach ($datanik as $row) {
@@ -201,7 +201,7 @@ class PerjanjianUmum extends CI_Controller
         }
         $action = "Mengupdate data";
         $objek = "Perjanjian Umum";
-        $in_dex = "Data id = " . $id;
+        $in_dex = "Data id = " . $idhd;
         $date = date("Y/m/d");
         $time = date("H:i:sa");
 
@@ -229,7 +229,7 @@ class PerjanjianUmum extends CI_Controller
     }
 
     public function delete_umum(){
-        $id = $this->input->post("id_delete");
+        $idhd = $this->input->post("id_delete");
         
         $file_del = $this->input->post("file_del");
         $pathfilefolder = './assets/files/';
@@ -241,7 +241,7 @@ class PerjanjianUmum extends CI_Controller
         }
         $action = "Menghapus data";
         $objek = "Perjanjian Umum";
-        $in_dex = "Data id = " . $id;
+        $in_dex = "Data id = " . $idhd;
         $date = date("Y/m/d");
         $time = date("H:i:sa");
 
@@ -259,7 +259,7 @@ class PerjanjianUmum extends CI_Controller
             @unlink($pathfilefolder.$file_del);
         }
         
-        $this->umum1_model->delete_data($id);
+        $this->umum1_model->delete_data($idhd);
         $this->log_activity_model->insert_log($datalog);
         $this->session->set_flashdata('alrt', 'dihapus');
         redirect("PerjanjianUmum");

@@ -36,7 +36,7 @@ class AsetTidakBergerak extends CI_Controller
 
     public function import_aset_tanah(){
         if(isset($_FILES["file_excel_aset_tanah"]["name"])){
-            $path = $_FILES["file_excel_aset_tanah"]["tmp_name"];
+            $path = isset($_FILES["file_excel_aset_tanah"]["tmp_name"]);
             $object = PHPExcel_IOFactory::load($path);
 
             foreach ($object->getWorksheetIterator() as $worksheet) {
@@ -101,9 +101,9 @@ class AsetTidakBergerak extends CI_Controller
     public function tambah_aset_tanah(){
     	$this->load->model("aset_tidak_bergerak_model");
 
-        $file1 = $_FILES['file1_tanah']['name'];
-        $file2 = $_FILES['file2_tanah']['name'];
-        $file3 = $_FILES['file3_tanah']['name'];
+        $file1 = isset($_FILES['file1_tanah']['name']);
+        $file2 = isset($_FILES['file2_tanah']['name']);
+        $file3 = isset($_FILES['file3_tanah']['name']);
 
         $config['upload_path'] = './assets/files';
         $config['allowed_types'] = 'pdf';
@@ -164,9 +164,9 @@ class AsetTidakBergerak extends CI_Controller
     public function update_aset_tanah(){
         $this->load->model("aset_tidak_bergerak_model");
 
-        $file1 = $_FILES['file1_tanah']['name'];
-        $file2 = $_FILES['file2_tanah']['name'];
-        $file3 = $_FILES['file3_tanah']['name'];
+        $file1 = isset($_FILES['file1_tanah']['name']);
+        $file2 = isset($_FILES['file2_tanah']['name']);
+        $file3 = isset($_FILES['file3_tanah']['name']);
 
         $hddnid = $this->input->post("hidden_id");
 
@@ -174,15 +174,15 @@ class AsetTidakBergerak extends CI_Controller
         $config['allowed_types'] = 'pdf';
         $this->load->library('upload', $config);
 
-        $upld1 = $this->upload->do_upload('file1_tanah');
+        $this->upload->do_upload('file1_tanah');
         $tsupld1 = $this->upload->data();
         $nfile1 = $tsupld1['file_name'];
 
-        $upld2 = $this->upload->do_upload('file2_tanah');
+        $this->upload->do_upload('file2_tanah');
         $tsupld2 = $this->upload->data();
         $nfile2 = $tsupld2['file_name'];
 
-        $upld3 = $this->upload->do_upload('file3_tanah');
+        $this->upload->do_upload('file3_tanah');
         $tsupld3 = $this->upload->data();
         $nfile3 = $tsupld3['file_name'];
 
@@ -326,7 +326,7 @@ class AsetTidakBergerak extends CI_Controller
 
         );
 
-        $id = $this->input->post("hidden_id");
+        $idhd = $this->input->post("hidden_id");
         $nik = $this->session->userdata('username');
         $datanik = $this->log_activity_model->get_data_nik($nik);
         foreach ($datanik as $row) {
@@ -334,7 +334,7 @@ class AsetTidakBergerak extends CI_Controller
         }
         $action = "Mengupdate data";
         $objek = "Aset Tidak Bergerak";
-        $in_dex = "Data id = " . $id;
+        $in_dex = "Data id = " . $idhd;
         $date = date("Y/m/d");
         $time = date("H:i:sa");
 
@@ -387,14 +387,13 @@ class AsetTidakBergerak extends CI_Controller
     }
 
     public function update_gambar_asettb(){
-        $gambar = $_FILES['file_gambar_asettb']['name'];
         $hiddenid_gambar = $this->input->post("hidden_id_gbr");
 
         $config['upload_path'] = './assets/img/img_aset_tb';
         $config['allowed_types'] = 'jpg|jpeg';
         $this->load->library('upload', $config);
 
-        $upld = $this->upload->do_upload('file_gambar_asettb');
+        $this->upload->do_upload('file_gambar_asettb');
         $tsupld = $this->upload->data();
         $nmgambar = $tsupld['file_name'];
 
@@ -430,7 +429,7 @@ class AsetTidakBergerak extends CI_Controller
     }
 
     public function delete_aset_tanah(){
-        $id = $this->input->post("id_delete");
+        $idhd = $this->input->post("id_delete");
         $file1_del = $this->input->post("file1_tanahdel");
         $file2_del = $this->input->post("file2_tanahdel");
         $file3_del = $this->input->post("file3_tanahdel");
@@ -445,7 +444,7 @@ class AsetTidakBergerak extends CI_Controller
         }
         $action = "Menghapus data";
         $objek = "Aset Tidak Bergerak";
-        $in_dex = "Data id = " . $id;
+        $in_dex = "Data id = " . $idhd;
         $date = date("Y/m/d");
         $time = date("H:i:sa");
 
@@ -471,7 +470,7 @@ class AsetTidakBergerak extends CI_Controller
         if (file_exists($pathgbrfolder.$gambardel)) {
             @unlink($pathgbrfolder.$gambardel);
         }
-        $this->aset_tidak_bergerak_model->delete_data_aset_tanah($id);
+        $this->aset_tidak_bergerak_model->delete_data_aset_tanah($idhd);
         $this->log_activity_model->insert_log($datalog);
         $this->session->set_flashdata('alrt', 'dihapus');
         redirect("AsetTidakBergerak");
@@ -479,9 +478,9 @@ class AsetTidakBergerak extends CI_Controller
 
     /*public function multi_del(){
         if($this->input->post('checkbox_value')){
-            $id = $this->input->post('checkbox_value');
-            for($count = 0; $count < count($id); $count++){
-                $this->aset_tidak_bergerak_model->multi_del($id[$count]);
+            $idhd = $this->input->post('checkbox_value');
+            for($count = 0; $count < count($idhd); $count++){
+                $this->aset_tidak_bergerak_model->multi_del($idhd[$count]);
             }
         }
     }

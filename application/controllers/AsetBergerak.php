@@ -780,7 +780,6 @@ class AsetBergerak extends CI_Controller
         $in_dex = "Data id = " . $idhd;
         $date = date("Y/m/d");
         $time = date("H:i:s");
-        $ntime = date('h:i A', strtotime($time));
 
         $datalog = array(
             "NIK" => $nik,

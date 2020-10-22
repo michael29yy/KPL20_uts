@@ -29,7 +29,7 @@ class KIR extends CI_Controller
         $this->load->model("kir_model");
 
 
-        $file = $_FILES['file_kir']['name'];
+        $file = isset($_FILES['file_kir']['name']);
 
         $config['upload_path'] = './assets/files';
         $config['allowed_types'] = 'pdf';
@@ -76,7 +76,7 @@ class KIR extends CI_Controller
     public function update_kir(){
         $this->load->model("kir_model");
 
-        $file = $_FILES['file_kir']['name'];
+        $file = isset($_FILES['file_kir']['name']);
 
         $config['upload_path'] = './assets/files';
         $config['allowed_types'] = 'pdf';
@@ -99,7 +99,7 @@ class KIR extends CI_Controller
             "file" => $cekfile     
         );
 
-        $id = $this->input->post("hidden_id");
+        $idhd = $this->input->post("hidden_id");
         $nik = $this->session->userdata('username');
         $datanik = $this->log_activity_model->get_data_nik($nik);
         foreach ($datanik as $row) {
@@ -107,7 +107,7 @@ class KIR extends CI_Controller
         }
         $action = "Mengupdate data";
         $objek = "KIR";
-        $in_dex = "Data id = " . $id;
+        $in_dex = "Data id = " . $idhd;
         $date = date("Y/m/d");
         $time = date("H:i:sa");
 
@@ -135,7 +135,7 @@ class KIR extends CI_Controller
     }
 
     public function delete_kir(){
-        $id = $this->input->post("id_delete");
+        $idhd = $this->input->post("id_delete");
         
         $file_del = $this->input->post("file_del");
         $pathfilefolder = './assets/files/';
@@ -147,7 +147,7 @@ class KIR extends CI_Controller
         }
         $action = "Menghapus data";
         $objek = "KIR";
-        $in_dex = "Data id = " . $id;
+        $in_dex = "Data id = " . $idhd;
         $date = date("Y/m/d");
         $time = date("H:i:sa");
 
@@ -165,7 +165,7 @@ class KIR extends CI_Controller
             @unlink($pathfilefolder.$file_del);
         }
 
-        $this->kir_model->delete_data($id);
+        $this->kir_model->delete_data($idhd);
         $this->log_activity_model->insert_log($datalog);
         $this->session->set_flashdata('alrt', 'dihapus');
         redirect("KIR");
