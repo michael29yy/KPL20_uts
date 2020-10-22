@@ -155,7 +155,7 @@ class Sewa extends CI_Controller
     public function update_sewa(){
         $this->load->model("sewa_model");
 
-        $file = $_FILES['file_sewa']['name'];
+        $file = isset($_FILES['file_sewa']['name']);
 
         $config['upload_path'] = './assets/files';
         $config['allowed_types'] = '*';
@@ -192,7 +192,7 @@ class Sewa extends CI_Controller
             "file" => $cekfile     
         );
 
-        $id = $this->input->post("hidden_id");
+        $idhd = $this->input->post("hidden_id");
         $nik = $this->session->userdata('username');
         $datanik = $this->log_activity_model->get_data_nik($nik);
         foreach ($datanik as $row) {
@@ -200,7 +200,7 @@ class Sewa extends CI_Controller
         }
         $action = "Mengupdate data";
         $objek = "Sewa Unit";
-        $in_dex = "Data id = " . $id;
+        $in_dex = "Data id = " . $idhd;
         $date = date("Y/m/d");
         $time = date("H:i:sa");
 
@@ -228,7 +228,7 @@ class Sewa extends CI_Controller
     }
 
     public function delete_sewa(){
-        $id = $this->input->post("id_delete");
+        $idhd = $this->input->post("id_delete");
         
         $file_del = $this->input->post("file_del");
         $pathfilefolder = './assets/files/';
@@ -240,7 +240,7 @@ class Sewa extends CI_Controller
         }
         $action = "Menghapus data";
         $objek = "Sewa Unit";
-        $in_dex = "Data id = " . $id;
+        $in_dex = "Data id = " . $idhd;
         $date = date("Y/m/d");
         $time = date("H:i:sa");
 
@@ -258,7 +258,7 @@ class Sewa extends CI_Controller
             @unlink($pathfilefolder.$file_del);
         }
 
-        $this->sewa_model->delete_data($id);
+        $this->sewa_model->delete_data($idhd);
         $this->log_activity_model->insert_log($datalog);
         $this->session->set_flashdata('alrt', 'dihapus');
         redirect("Sewa");
