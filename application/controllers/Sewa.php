@@ -10,7 +10,7 @@ class Sewa extends CI_Controller
         if ($this->session->userdata('id_role') != 29) {
             redirect('HalamanLogin');
         }
-
+        
         date_default_timezone_set("Asia/Jakarta");
         $this->load->model('sewa_model');
         $this->load->model('log_activity_model');
@@ -18,7 +18,6 @@ class Sewa extends CI_Controller
     }
 
     public function index(){
-
     	$this->load->model("sewa_model");
         $data['user'] = $this->db->get_where('data_admin', ['username' => $this->session->userdata('username')])->row_array();
     	$data["fetch_data"] = $this->sewa_model->fetch_data();

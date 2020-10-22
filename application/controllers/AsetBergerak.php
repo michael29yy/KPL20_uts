@@ -37,7 +37,7 @@ class AsetBergerak extends CI_Controller
 
     public function import_alat_berat(){
         if(isset($_FILES["file_excel_alat_berat"]["name"])){
-            $path = $_FILES["file_excel_alat_berat"]["tmp_name"];
+            $path = isset($_FILES["file_excel_alat_berat"]["tmp_name"]);
             $object = PHPExcel_IOFactory::load($path);
 
             foreach ($object->getWorksheetIterator() as $worksheet) {
@@ -100,7 +100,7 @@ class AsetBergerak extends CI_Controller
         $this->load->model("aset_bergerak_model");
 
 
-        $file = $_FILES['file_aset_alat_berat']['name'];
+        $file = isset($_FILES['file_aset_alat_berat']['name']);
 
         $config['upload_path'] = './assets/files';
         $config['allowed_types'] = 'pdf';
@@ -154,7 +154,7 @@ class AsetBergerak extends CI_Controller
     public function update_aset_alat_berat(){
         $this->load->model("aset_bergerak_model");
 
-        $file = $_FILES['file_aset_alat_berat']['name'];
+        $file = isset($_FILES['file_aset_alat_berat']['name']);
 
         $config['upload_path'] = './assets/files';
         $config['allowed_types'] = '*';
@@ -193,7 +193,7 @@ class AsetBergerak extends CI_Controller
 
         );
 
-        $id = $this->input->post("hidden_id");
+        $idhd = $this->input->post("hidden_id");
         $nik = $this->session->userdata('username');
         $datanik = $this->log_activity_model->get_data_nik($nik);
         foreach ($datanik as $row) {
@@ -201,7 +201,7 @@ class AsetBergerak extends CI_Controller
         }
         $action = "Mengupdate data";
         $objek = "Aset Bergerak Alat Berat";
-        $in_dex = "Data id = " . $id;
+        $in_dex = "Data id = " . $idhd;
         $date = date("Y/m/d");
         $time = date("H:i:sa");
 
@@ -227,9 +227,9 @@ class AsetBergerak extends CI_Controller
     }
 
     public function update_gambar_alat_berat(){
-        $ngambar_1 = $_FILES['file_gambar_alat_berat1']['name'];
-        $ngambar_2 = $_FILES['file_gambar_alat_berat2']['name'];
-        $ngambar_3 = $_FILES['file_gambar_alat_berat3']['name'];
+        $ngambar_1 = isset($_FILES['file_gambar_alat_berat1']['name']);
+        $ngambar_2 = isset($_FILES['file_gambar_alat_berat2']['name']);
+        $ngambar_3 = isset($_FILES['file_gambar_alat_berat3']['name']);
 
         $hiddenid_gambar = $this->input->post("hidden_id_gbr");
         $config['upload_path'] = './assets/img/img_alat_berat';
@@ -357,7 +357,7 @@ class AsetBergerak extends CI_Controller
     }
 
     public function delete_aset_alat_berat(){
-        $id = $this->input->post("id_delete");
+        $idhd = $this->input->post("id_delete");
         
         $file_del = $this->input->post("file_del");
         $gambar1_del = $this->input->post("gambar1_del");
@@ -374,7 +374,7 @@ class AsetBergerak extends CI_Controller
         }
         $action = "Menghapus data";
         $objek = "Aset Bergerak Alat Berat";
-        $in_dex = "Data id = " . $id;
+        $in_dex = "Data id = " . $idhd;
         $date = date("Y/m/d");
         $time = date("H:i:sa");
 
@@ -401,7 +401,7 @@ class AsetBergerak extends CI_Controller
             @unlink($pathgbrfolder.$gambar3_del);
         }
 
-        $this->aset_bergerak_model->delete_data_alat_berat($id);
+        $this->aset_bergerak_model->delete_data_alat_berat($idhd);
         $this->log_activity_model->insert_log($datalog);
         $this->session->set_flashdata('alrt', 'dihapus');
         redirect("AsetBergerak");
@@ -417,7 +417,7 @@ class AsetBergerak extends CI_Controller
 
     public function import_kendaraan(){
         if(isset($_FILES["file_excel_kendaraan"]["name"])){
-            $path = $_FILES["file_excel_kendaraan"]["tmp_name"];
+            $path = isset($_FILES["file_excel_kendaraan"]["tmp_name"]);
             $object = PHPExcel_IOFactory::load($path);
 
             foreach ($object->getWorksheetIterator() as $worksheet) {
@@ -489,7 +489,7 @@ class AsetBergerak extends CI_Controller
     	$this->load->model("aset_bergerak_model");
 
 
-        $file = $_FILES['file_aset_kendaraan']['name'];
+        $file = isset($_FILES['file_aset_kendaraan']['name']);
 
         $config['upload_path'] = './assets/files';
         $config['allowed_types'] = 'pdf';
@@ -547,7 +547,7 @@ class AsetBergerak extends CI_Controller
     public function update_aset_kendaraan(){
         $this->load->model("aset_bergerak_model");
 
-        $file = $_FILES['file_aset_kendaraan']['name'];
+        $file = isset($_FILES['file_aset_kendaraan']['name']);
 
         $config['upload_path'] = './assets/files';
         $config['allowed_types'] = '*';
@@ -594,7 +594,7 @@ class AsetBergerak extends CI_Controller
 
         );
 
-        $id = $this->input->post("hidden_id");
+        $idhd = $this->input->post("hidden_id");
         $nik = $this->session->userdata('username');
         $datanik = $this->log_activity_model->get_data_nik($nik);
         foreach ($datanik as $row) {
@@ -602,7 +602,7 @@ class AsetBergerak extends CI_Controller
         }
         $action = "Mengupdate data";
         $objek = "Aset Bergerak Kendaraan";
-        $in_dex = "Data id = " . $id;
+        $in_dex = "Data id = " . $idhd;
         $date = date("Y/m/d");
         $time = date("H:i:sa");
 
@@ -629,9 +629,9 @@ class AsetBergerak extends CI_Controller
     }
 
     public function update_gambar_kendaraan(){
-        $ngambar_1 = $_FILES['file_gambar_kendaraan1']['name'];
-        $ngambar_2 = $_FILES['file_gambar_kendaraan2']['name'];
-        $ngambar_3 = $_FILES['file_gambar_kendaraan3']['name'];
+        $ngambar_1 = isset($_FILES['file_gambar_kendaraan1']['name']);
+        $ngambar_2 = isset($_FILES['file_gambar_kendaraan2']['name']);
+        $ngambar_3 = isset($_FILES['file_gambar_kendaraan3']['name']);
 
         $hiddenid_gambar = $this->input->post("hidden_id_gbr");
         $config['upload_path'] = './assets/img/img_kendaraan';
@@ -760,7 +760,7 @@ class AsetBergerak extends CI_Controller
     }
 
     public function delete_aset_kendaraan(){
-        $id = $this->input->post("id_delete");
+        $idhd = $this->input->post("id_delete");
         
         $file_del = $this->input->post("file_del");
         $gambar1_del = $this->input->post("gambar1_del");
@@ -777,7 +777,7 @@ class AsetBergerak extends CI_Controller
         }
         $action = "Menghapus data";
         $objek = "Aset Bergerak Kendaraan";
-        $in_dex = "Data id = " . $id;
+        $in_dex = "Data id = " . $idhd;
         $date = date("Y/m/d");
         $time = date("H:i:s");
         $ntime = date('h:i A', strtotime($time));
@@ -805,7 +805,7 @@ class AsetBergerak extends CI_Controller
             @unlink($pathgbrfolder.$gambar3_del);
         }
 
-        $this->aset_bergerak_model->delete_data_kendaraan($id);
+        $this->aset_bergerak_model->delete_data_kendaraan($idhd);
         $this->log_activity_model->insert_log($datalog);
         $this->session->set_flashdata('alrt', 'dihapus');
         redirect("AsetBergerak");
@@ -821,7 +821,7 @@ class AsetBergerak extends CI_Controller
 
     public function import_property(){
         if(isset($_FILES["file_excel_property"]["name"])){
-            $path = $_FILES["file_excel_property"]["tmp_name"];
+            $path = isset($_FILES["file_excel_property"]["tmp_name"]);
             $object = PHPExcel_IOFactory::load($path);
 
             foreach ($object->getWorksheetIterator() as $worksheet) {
@@ -883,7 +883,7 @@ class AsetBergerak extends CI_Controller
     	$this->load->model("aset_bergerak_model");
 
 
-        $file = $_FILES['file_aset_property']['name'];
+        $file = isset($_FILES['file_aset_property']['name']);
 
         $config['upload_path'] = './assets/files';
         $config['allowed_types'] = 'pdf';
@@ -936,7 +936,7 @@ class AsetBergerak extends CI_Controller
     public function update_aset_property(){
         $this->load->model("aset_bergerak_model");
 
-        $file = $_FILES['file_aset_property']['name'];
+        $file = isset($_FILES['file_aset_property']['name']);
 
         $config['upload_path'] = './assets/files';
         $config['allowed_types'] = '*';
@@ -973,7 +973,7 @@ class AsetBergerak extends CI_Controller
 
         );
 
-        $id = $this->input->post("hidden_id");
+        $idhd = $this->input->post("hidden_id");
         $nik = $this->session->userdata('username');
         $datanik = $this->log_activity_model->get_data_nik($nik);
         foreach ($datanik as $row) {
@@ -981,7 +981,7 @@ class AsetBergerak extends CI_Controller
         }
         $action = "Mengupdate data";
         $objek = "Aset Bergerak Property";
-        $in_dex = "Data id = " . $id;
+        $in_dex = "Data id = " . $idhd;
         $date = date("Y/m/d");
         $time = date("H:i:sa");
 
@@ -1007,9 +1007,9 @@ class AsetBergerak extends CI_Controller
     }
 
     public function update_gambar_property(){
-        $ngambar_1 = $_FILES['file_gambar_property1']['name'];
-        $ngambar_2 = $_FILES['file_gambar_property2']['name'];
-        $ngambar_3 = $_FILES['file_gambar_property3']['name'];
+        $ngambar_1 = isset($_FILES['file_gambar_property1']['name']);
+        $ngambar_2 = isset($_FILES['file_gambar_property2']['name']);
+        $ngambar_3 = isset($_FILES['file_gambar_property3']['name']);
 
         $hiddenid_gambar = $this->input->post("hidden_id_gbr");
         $config['upload_path'] = './assets/img/img_property';
@@ -1137,7 +1137,7 @@ class AsetBergerak extends CI_Controller
     }
 
     public function delete_aset_property(){
-        $id = $this->input->post("id_delete");
+        $idhd = $this->input->post("id_delete");
         
         $file_del = $this->input->post("file_del");
         $gambar1_del = $this->input->post("gambar1_del");
@@ -1154,7 +1154,7 @@ class AsetBergerak extends CI_Controller
         }
         $action = "Menghapus data";
         $objek = "Aset Bergerak Property";
-        $in_dex = "Data id = " . $id;
+        $in_dex = "Data id = " . $idhd;
         $date = date("Y/m/d");
         $time = date("H:i:sa");
 
@@ -1181,7 +1181,7 @@ class AsetBergerak extends CI_Controller
             @unlink($pathgbrfolder.$gambar3_del);
         }
 
-        $this->aset_bergerak_model->delete_data_property($id);
+        $this->aset_bergerak_model->delete_data_property($idhd);
         $this->log_activity_model->insert_log($datalog);
         $this->session->set_flashdata('alrt', 'dihapus');
         redirect("AsetBergerak");
