@@ -33,7 +33,7 @@
         <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url();?>Dashboard">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url();?>Dashboard">
                 <div class="sidebar-brand-icon ">
                     <i class="fas fa-balance-scale"></i>
                 </div>
@@ -45,7 +45,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url();?>Dashboard">
+                <a class="nav-link" href="<?= base_url();?>Dashboard">
                     <i class="fas fa-fw fa-desktop"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -67,11 +67,11 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu :</h6>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>Leasing">Leasing </a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>Asuransi">Asuransi</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>Sewa">Sewa Unit</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>Jualbeli">Jual Beli</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>PerjanjianUmum">Umum</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>Leasing">Leasing </a>
+                        <a class="collapse-item" href="<?= base_url() ;?>Asuransi">Asuransi</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>Sewa">Sewa Unit</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>Jualbeli">Jual Beli</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>PerjanjianUmum">Umum</a>
                     </div>
                 </div>
             </li>
@@ -85,11 +85,11 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu :</h6>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>KLH">KLH</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>B3">B3</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>STNK">STNK</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>KIR">KIR</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>PerizinanUmum">Umum</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>KLH">KLH</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>B3">B3</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>STNK">STNK</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>KIR">KIR</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>PerizinanUmum">Umum</a>
                     </div>
                 </div>
             </li>
@@ -103,8 +103,8 @@
                 <div id="collapseAset" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu :</h6>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>AsetBergerak">Aset Bergerak</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>AsetTidakBergerak">Aset Tidak Bergerak</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>AsetBergerak">Aset Bergerak</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>AsetTidakBergerak">Aset Tidak Bergerak</a>
                     </div>
                 </div>
             </li>
@@ -118,7 +118,7 @@
 
             <!-- Nav Item - Purchase -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url() ;?>LogActivity">
+                <a class="nav-link" href="<?= base_url() ;?>LogActivity">
                     <i class="fas fa-fw fa-th-list"></i>
                     <span>Log Activity</span>
                 </a>
@@ -224,7 +224,7 @@
                         <div class="card mr-2">      
                             <button class="btn btn-primary" data-toggle="modal" data-target="#importexceltanahmodal">Import Excel Aset Tanah</button>
                         </div>
-                        <form action="<?php echo base_url() ;?>AsetTidakBergerak/download_format_excel_aset_tanah" enctype="multipart/form-data" method="POST">
+                        <form action="<?= base_url() ;?>AsetTidakBergerak/download_format_excel_aset_tanah" enctype="multipart/form-data" method="POST">
                             <div class="mr-2">
                                 <button class="btn btn-primary" type="submit" name="download_format_excel_aset_tanah">Download Excel Format</button>
                             </div>
@@ -277,14 +277,14 @@
                                             $gambar = $row->gambar;
                                 ?>
                                     <tr>
-                                        <td><?php echo $nomor+=1; ?></td>
-                                        <td><a href="" data-toggle="modal" data-target="#file1modal<?php echo $no_id = $id; ?>"><?php echo $row->no_sertifikat; ?></a>
+                                        <td><?= $nomor+=1; ?></td>
+                                        <td><a href="" data-toggle="modal" data-target="#file1modal<?= $no_id = $id; ?>"><?= $row->no_sertifikat; ?></a>
                                                 <!--File1 Modal-->
                                                 <?php
                                                     $pth_file1 = "assets/files/".$file1;
                                                     if (!$file1 or !file_exists($pth_file1)): 
                                                 ?>
-                                                <div class="modal fade" id="file1modal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="file1modal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -300,23 +300,23 @@
                                                 <?php
                                                     else: 
                                                 ?>
-                                                <div class="modal fade" id="file1modal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="file1modal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-xl" role="document">
                                                         <div class="modal-content">
-                                                                <embed src="<?= base_url();?>assets/files/<?php echo $row->file1;?>" type="application/pdf" width="100%" height="600px"></embed>
+                                                                <embed src="<?= base_url();?>assets/files/<?= $row->file1;?>" type="application/pdf" width="100%" height="600px"></embed>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <?php endif; ?>
                                         </td>
                                         <td>
-                                            <a href="" data-toggle="modal" data-target="#file2modal<?php echo $no_id = $id; ?>"><?php echo $row->no_ajb; ?></a>
+                                            <a href="" data-toggle="modal" data-target="#file2modal<?= $no_id = $id; ?>"><?= $row->no_ajb; ?></a>
                                                 <!--File2 Modal-->
                                                 <?php
                                                     $pth_file2 = "assets/files/".$file2;
                                                     if (!$file2 or !file_exists($pth_file2)): 
                                                 ?>
-                                                <div class="modal fade" id="file2modal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="file2modal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -332,25 +332,25 @@
                                                 <?php
                                                     else: 
                                                 ?>
-                                                <div class="modal fade" id="file2modal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="file2modal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-xl" role="document">
                                                         <div class="modal-content">
-                                                                <embed src="<?= base_url();?>assets/files/<?php echo $row->file2;?>" type="application/pdf" width="100%" height="600px"></embed>
+                                                                <embed src="<?= base_url();?>assets/files/<?= $row->file2;?>" type="application/pdf" width="100%" height="600px"></embed>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <?php endif; ?>
                                         </td>
-                                        <td><?php echo $row->atas_nama; ?></td>
-                                        <td><?php echo $row->no_pbb; ?></td>
+                                        <td><?= $row->atas_nama; ?></td>
+                                        <td><?= $row->no_pbb; ?></td>
                                         <td>
-                                            <a href="" data-toggle="modal" data-target="#file3modal<?php echo $no_id = $id; ?>"><?php echo $row->imb; ?></a>
+                                            <a href="" data-toggle="modal" data-target="#file3modal<?= $no_id = $id; ?>"><?= $row->imb; ?></a>
                                                 <!--File3 Modal-->
                                                 <?php
                                                     $pth_file3 = "assets/files/".$file3;
                                                     if (!$file3 or !file_exists($pth_file3)): 
                                                 ?>
-                                                <div class="modal fade" id="file3modal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="file3modal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -366,10 +366,10 @@
                                                 <?php
                                                     else: 
                                                 ?>
-                                                <div class="modal fade" id="file3modal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="file3modal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-xl" role="document">
                                                         <div class="modal-content">
-                                                                <embed src="<?= base_url();?>assets/files/<?php echo $row->file3;?>" type="application/pdf" width="100%" height="600px"></embed>
+                                                                <embed src="<?= base_url();?>assets/files/<?= $row->file3;?>" type="application/pdf" width="100%" height="600px"></embed>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -377,10 +377,10 @@
                                         </td>
                                         <td>
                                             <!-- View Gambar -->
-                                            <a href="" class="btn btn-default" style="background-color: darkcyan;" data-toggle="modal" data-target=#gambarasettb<?php echo $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-file-image"></i></a>
+                                            <a href="" class="btn btn-default" style="background-color: darkcyan;" data-toggle="modal" data-target=#gambarasettb<?= $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-file-image"></i></a>
 
                                             <!-- Modal Image -->
-                                            <div class="modal fade" id="gambarasettb<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="gambarasettb<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                                                     <div style="background-color: black;" class="modal-content">
                                                         <?php 
@@ -394,7 +394,7 @@
                                                         <?php 
                                                             else: 
                                                         ?>
-                                                            <img width="100%" src="<?= base_url();?>assets/img/img_aset_tb/<?php echo $gambar; ?>">
+                                                            <img width="100%" src="<?= base_url();?>assets/img/img_aset_tb/<?= $gambar; ?>">
                                                             <div class="carousel-caption">
                                                                 <h3 style="color: white;"><?= $gambar;?></h3>
                                                             </div>
@@ -406,10 +406,10 @@
                                             </div>
                                         <td>
                                             <!--Detail-->
-                                            <a href="" class="btn btn-default" style="background-color: lime;" data-toggle="modal" data-target=#detailtanahmodal<?php echo $no_id = $id; ?>><i style="color: white;" class="fas fa-search"></i></a>
+                                            <a href="" class="btn btn-default" style="background-color: lime;" data-toggle="modal" data-target=#detailtanahmodal<?= $no_id = $id; ?>><i style="color: white;" class="fas fa-search"></i></a>
 
                                             <!-- Detail Modal -->
-                                            <div class="modal fade" id="detailtanahmodal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="detailtanahmodal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -436,16 +436,16 @@
                                                                 </thead>
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td><?php echo $row->no_sertifikat; ?></td>
-                                                                        <td><?php echo $row->no_ajb; ?></a></td>
-                                                                        <td><?php echo $row->atas_nama; ?></td>
-                                                                        <td><?php echo $row->no_pbb; ?></td>
-                                                                        <td><?php echo $row->harga_resmi; ?></td>
-                                                                        <td><?php echo $row->harga_real; ?></td>
-                                                                        <td><?php echo $row->lokasi; ?></td>
-                                                                        <td><?php echo $row->posisi_sertifikat; ?></td>
-                                                                        <td><?php echo $row->imb; ?></td>
-                                                                        <td><?php echo $row->keterangan; ?></td>
+                                                                        <td><?= $row->no_sertifikat; ?></td>
+                                                                        <td><?= $row->no_ajb; ?></a></td>
+                                                                        <td><?= $row->atas_nama; ?></td>
+                                                                        <td><?= $row->no_pbb; ?></td>
+                                                                        <td><?= $row->harga_resmi; ?></td>
+                                                                        <td><?= $row->harga_real; ?></td>
+                                                                        <td><?= $row->lokasi; ?></td>
+                                                                        <td><?= $row->posisi_sertifikat; ?></td>
+                                                                        <td><?= $row->imb; ?></td>
+                                                                        <td><?= $row->keterangan; ?></td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
@@ -455,10 +455,10 @@
                                             </div>
 
                                             <!--Edit-->
-                                            <a href="" class="btn btn-warning" data-toggle="modal" data-target="#editasettanah<?php echo $no_ed = $id; ?>"><i class="fas fa-edit"></i></a>
+                                            <a href="" class="btn btn-warning" data-toggle="modal" data-target="#editasettanah<?= $no_ed = $id; ?>"><i class="fas fa-edit"></i></a>
 
                                             <!-- Modal Edit Aset Tanah -->
-                                            <div class="modal fade" id="editasettanah<?php echo $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="editasettanah<?= $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -468,8 +468,8 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="<?php echo base_url() ;?>AsetTidakBergerak/update_aset_tanah" enctype="multipart/form-data" method="POST">
-                                                                <input type="text" name="hidden_id" value="<?php echo $no_ed; ?>" hidden>
+                                                            <form action="<?= base_url() ;?>AsetTidakBergerak/update_aset_tanah" enctype="multipart/form-data" method="POST">
+                                                                <input type="text" name="hidden_id" value="<?= $no_ed; ?>" hidden>
                                                                 <div class="form-group">
                                                                     <div class="form-label-group">
                                                                         <label>No. Sertifikat: </label>
@@ -564,10 +564,10 @@
                                             </div>
 
                                             <!--Edit Gambar-->
-                                            <a href="" class="btn btn-default" style="background-color: darkcyan;" data-toggle="modal" data-target=#editgambarasettb<?php echo $no_id = $id; ?>><i style="color: white;" class="fas fa-images"></i></a>
+                                            <a href="" class="btn btn-default" style="background-color: darkcyan;" data-toggle="modal" data-target=#editgambarasettb<?= $no_id = $id; ?>><i style="color: white;" class="fas fa-images"></i></a>
 
                                             <!--Modal Edit Gambar Alat Berat-->
-                                            <div class="modal fade" id="editgambarasettb<?php echo $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="editgambarasettb<?= $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -577,8 +577,8 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="<?php echo base_url() ;?>AsetTidakBergerak/update_gambar_asettb" enctype="multipart/form-data" method="POST">
-                                                                <input type="text" name="hidden_id_gbr" value="<?php echo $no_ed; ?>" hidden>
+                                                            <form action="<?= base_url() ;?>AsetTidakBergerak/update_gambar_asettb" enctype="multipart/form-data" method="POST">
+                                                                <input type="text" name="hidden_id_gbr" value="<?= $no_ed; ?>" hidden>
                                                                 <div class="form-group">
                                                                     <div class="form-label-group">
                                                                         <label style="color: red;">PENTING!!</label>
@@ -610,7 +610,7 @@
                                             <a href="" class="btn btn-danger" data-toggle="modal" data-target="#deleteasettanah<?= $no_del = $id; ?>"><i class="fas fa-trash-alt"></i></a>
 
                                             <!-- Delete Data Aset Tanah -->
-                                            <div class="modal fade" id="deleteasettanah<?php echo $no_del ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="deleteasettanah<?= $no_del ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -621,7 +621,7 @@
                                                         </div>
                                                         <div class="modal-body">
                                                             Apakah anda yakin ingin menghapus data no.<?= $nomor; ?> ?
-                                                            <form action="<?php echo base_url() ;?>AsetTidakBergerak/delete_aset_tanah" method="POST">
+                                                            <form action="<?= base_url() ;?>AsetTidakBergerak/delete_aset_tanah" method="POST">
                                                                 <input type="text" name="file1_tanahdel" value="<?= $file1;?>" hidden/>
                                                                 <input type="text" name="file2_tanahdel" value="<?= $file2;?>" hidden/>
                                                                 <input type="text" name="file3_tanahdel" value="<?= $file3;?>" hidden/>
@@ -709,7 +709,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url() ;?>AsetTidakBergerak/import_aset_tanah" method="POST" id="import_form" enctype="multipart/form-data">
+                    <form action="<?= base_url() ;?>AsetTidakBergerak/import_aset_tanah" method="POST" id="import_form" enctype="multipart/form-data">
                         <label>Silahkan Input File Excel</label>
                         <br/>
                         <input type="file" name="file_excel_aset_tanah" id="file_excel_aset_tanah" required accept=".xls, .xlsx"/>
@@ -734,7 +734,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url() ;?>AsetTidakBergerak/tambah_aset_tanah" enctype="multipart/form-data" method="POST">
+                    <form action="<?= base_url() ;?>AsetTidakBergerak/tambah_aset_tanah" enctype="multipart/form-data" method="POST">
                         <div class="form-group">
                             <div class="form-label-group">
                                 <label>No. Sertifikat: </label>
@@ -871,7 +871,7 @@
                     checkbox_value.push($(this).val());
                 });
                 $.ajax({
-                    url:"<?php echo base_url();?>AsetTidakBergerak/multi_del",
+                    url:"<?= base_url();?>AsetTidakBergerak/multi_del",
                     method:"POST",
                     data:{checkbox_value:checkbox_value},
                     success:function(){

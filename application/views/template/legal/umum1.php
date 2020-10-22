@@ -33,7 +33,7 @@
         <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url();?>Dashboard">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url();?>Dashboard">
                 <div class="sidebar-brand-icon ">
                     <i class="fas fa-balance-scale"></i>
                 </div>
@@ -45,7 +45,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url();?>Dashboard">
+                <a class="nav-link" href="<?= base_url();?>Dashboard">
                     <i class="fas fa-fw fa-desktop"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -67,11 +67,11 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu :</h6>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>Leasing">Leasing </a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>Asuransi">Asuransi</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>Sewa">Sewa Unit</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>Jualbeli">Jual Beli</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>PerjanjianUmum">Umum</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>Leasing">Leasing </a>
+                        <a class="collapse-item" href="<?= base_url() ;?>Asuransi">Asuransi</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>Sewa">Sewa Unit</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>Jualbeli">Jual Beli</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>PerjanjianUmum">Umum</a>
                     </div>
                 </div>
             </li>
@@ -85,11 +85,11 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu :</h6>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>KLH">KLH</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>B3">B3</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>STNK">STNK</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>KIR">KIR</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>PerizinanUmum">Umum</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>KLH">KLH</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>B3">B3</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>STNK">STNK</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>KIR">KIR</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>PerizinanUmum">Umum</a>
                     </div>
                 </div>
             </li>
@@ -103,8 +103,8 @@
                 <div id="collapseAset" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu :</h6>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>AsetBergerak">Aset Bergerak</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>AsetTidakBergerak">Aset Tidak Bergerak</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>AsetBergerak">Aset Bergerak</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>AsetTidakBergerak">Aset Tidak Bergerak</a>
                     </div>
                 </div>
             </li>
@@ -118,7 +118,7 @@
 
             <!-- Nav Item - Purchase -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url() ;?>LogActivity">
+                <a class="nav-link" href="<?= base_url() ;?>LogActivity">
                     <i class="fas fa-fw fa-th-list"></i>
                     <span>Log Activity</span>
                 </a>
@@ -227,7 +227,7 @@
                             <button class="btn btn-primary" data-toggle="modal" data-target="#importexcelpumummodal">Import Excel</button>
                         </div>
 
-                        <form action="<?php echo base_url() ;?>PerjanjianUmum/download_format_excel" enctype="multipart/form-data" method="POST">
+                        <form action="<?= base_url() ;?>PerjanjianUmum/download_format_excel" enctype="multipart/form-data" method="POST">
                             <div class="mr-2">
                                 <button class="btn btn-primary" type="submit" name="download_format_excel">Download Excel Format</button>
                             </div>
@@ -276,21 +276,21 @@
                                             $file = $row->file;
                                 ?>
                                         <tr>
-                                            <td><?php echo $nomor+=1; ?></td>
-                                            <td><?php echo $row->no_perjanjian; ?></td>
-                                            <td><?php echo $row->nama_mitra; ?></td>
-                                            <td><?php echo $row->nama_pt; ?></td>
-                                            <td><?php echo $row->periode_mulai; ?></td>
-                                            <td><?php echo $row->periode_selesai; ?></td>
+                                            <td><?= $nomor+=1; ?></td>
+                                            <td><?= $row->no_perjanjian; ?></td>
+                                            <td><?= $row->nama_mitra; ?></td>
+                                            <td><?= $row->nama_pt; ?></td>
+                                            <td><?= $row->periode_mulai; ?></td>
+                                            <td><?= $row->periode_selesai; ?></td>
                                             <td>
-                                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#filemodal<?php echo $no_id = $id; ?>">View <i class="fas fa-fw fa-file-pdf"></i></a>
+                                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#filemodal<?= $no_id = $id; ?>">View <i class="fas fa-fw fa-file-pdf"></i></a>
 
                                                 <!--File Modal-->
                                                 <?php
                                                     $pth_file = "assets/files/".$file;
                                                     if (!$file or !file_exists($pth_file)): 
                                                 ?>
-                                                <div class="modal fade" id="filemodal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="filemodal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -306,10 +306,10 @@
                                                 <?php
                                                     else: 
                                                 ?>
-                                                <div class="modal fade" id="filemodal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="filemodal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-xl" role="document">
                                                         <div class="modal-content">
-                                                                <embed class="embed-responsive" src="<?= base_url();?>assets/files/<?php echo $row->file;?>" type="application/pdf" width="100%" height="600px"></embed>
+                                                                <embed class="embed-responsive" src="<?= base_url();?>assets/files/<?= $row->file;?>" type="application/pdf" width="100%" height="600px"></embed>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -317,10 +317,10 @@
 
                                             </td>
                                             <td>
-                                                <a href="" class="btn btn-default" style="background-color: lime;" data-toggle="modal" data-target=#detailumummodal<?php echo $no_id = $id; ?>><i style="color: white;" class="fas fa-search"></i></a>
+                                                <a href="" class="btn btn-default" style="background-color: lime;" data-toggle="modal" data-target=#detailumummodal<?= $no_id = $id; ?>><i style="color: white;" class="fas fa-search"></i></a>
 
                                                 <!-- Detail Modal -->
-                                                <div class="modal fade" id="detailumummodal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="detailumummodal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -346,15 +346,15 @@
                                                                     </thead>
                                                                     <tbody>
                                                                         <tr>
-                                                                            <td><?php echo $row->no_perjanjian; ?></td>
-                                                                            <td><?php echo $row->nama_mitra; ?></td>
-                                                                            <td><?php echo $row->nama_pt; ?></td>
-                                                                            <td><?php echo $row->periode_mulai; ?></td>
-                                                                            <td><?php echo $row->periode_selesai; ?></td>
-                                                                            <td><?php echo $row->kategori_kendaraan; ?></td>
-                                                                            <td><?php echo $row->keterangan; ?></td>
-                                                                            <td><?php echo $row->status_kontrak; ?></td>
-                                                                            <td><?php echo $row->catatan; ?></td>
+                                                                            <td><?= $row->no_perjanjian; ?></td>
+                                                                            <td><?= $row->nama_mitra; ?></td>
+                                                                            <td><?= $row->nama_pt; ?></td>
+                                                                            <td><?= $row->periode_mulai; ?></td>
+                                                                            <td><?= $row->periode_selesai; ?></td>
+                                                                            <td><?= $row->kategori_kendaraan; ?></td>
+                                                                            <td><?= $row->keterangan; ?></td>
+                                                                            <td><?= $row->status_kontrak; ?></td>
+                                                                            <td><?= $row->catatan; ?></td>
                                                                         </tr>
                                                                     </tbody>
                                                                 </table>
@@ -363,10 +363,10 @@
                                                     </div>
                                                 </div>
 
-                                                <a href="" class="btn btn-warning" data-toggle="modal" data-target="#editumum<?php echo $no_ed = $id; ?>"><i class="fas fa-edit"></i></a>
+                                                <a href="" class="btn btn-warning" data-toggle="modal" data-target="#editumum<?= $no_ed = $id; ?>"><i class="fas fa-edit"></i></a>
 
                                                     <!-- Edit Umum Modal -->
-                                                    <div class="modal fade" id="editumum<?php echo $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal fade" id="editumum<?= $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -376,49 +376,49 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <form action="<?php echo base_url() ;?>Perjanjianumum/update_umum" enctype="multipart/form-data" method="POST">
-                                                                    <input type="text" name="hidden_id" value="<?php echo $no_ed; ?>" hidden>
+                                                                    <form action="<?= base_url() ;?>Perjanjianumum/update_umum" enctype="multipart/form-data" method="POST">
+                                                                    <input type="text" name="hidden_id" value="<?= $no_ed; ?>" hidden>
                                                                     <div class="form-group">
                                                                         <div class="form-label-group">
                                                                             <label>No. Perjanjian : </label>
-                                                                            <input class="form-control" type="text" name="no_perjanjian" placeholder="no perjanjian" value="<?php echo $row->no_perjanjian; ?>">
+                                                                            <input class="form-control" type="text" name="no_perjanjian" placeholder="no perjanjian" value="<?= $row->no_perjanjian; ?>">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <div class="form-label-group">
                                                                             <label>Mitra : </label>
-                                                                            <input class="form-control" type="text" name="nama_mitra" placeholder="nama mitra" value="<?php echo $row->nama_mitra; ?>">
+                                                                            <input class="form-control" type="text" name="nama_mitra" placeholder="nama mitra" value="<?= $row->nama_mitra; ?>">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <div class="form-label-group">
                                                                             <label>Nama PT : </label>
-                                                                            <input class="form-control" type="text" name="nama_pt" placeholder="nama pt" value="<?php echo $row->nama_pt; ?>">
+                                                                            <input class="form-control" type="text" name="nama_pt" placeholder="nama pt" value="<?= $row->nama_pt; ?>">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <div class="form-label-group">
                                                                             <label>Periode Mulai : </label>
-                                                                            <input class="form-control" type="date" name="periode_mulai" value="<?php echo $row->periode_mulai; ?>">
+                                                                            <input class="form-control" type="date" name="periode_mulai" value="<?= $row->periode_mulai; ?>">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <div class="form-label-group">
                                                                             <label>Periode Selesai : </label>
-                                                                            <input class="form-control" type="date" name="periode_selesai" value="<?php echo $row->periode_selesai; ?>">
+                                                                            <input class="form-control" type="date" name="periode_selesai" value="<?= $row->periode_selesai; ?>">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <div class="form-label-group">
                                                                             <label>Kategori Kendaraan : </label>
-                                                                            <input class="form-control" type="text" name="kategori_kendaraan" placeholder="kategori kendaraan" value="<?php echo $row->kategori_kendaraan; ?>">
+                                                                            <input class="form-control" type="text" name="kategori_kendaraan" placeholder="kategori kendaraan" value="<?= $row->kategori_kendaraan; ?>">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <div class="form-label-group">
                                                                             <label>Keterangan : </label>
                                                                             <select class="form-control" name="keterangan">
-                                                                                <option value="<?php echo $row->keterangan; ?>" >--Keterangan--</option>
+                                                                                <option value="<?= $row->keterangan; ?>" >--Keterangan--</option>
                                                                                 <option value="Baru">Baru</option>
                                                                                 <option value="Perpanjangan">Perpanjangan</option>
                                                                             </select>
@@ -427,13 +427,13 @@
                                                                     <div class="form-group">
                                                                         <div class="form-label-group">
                                                                             <label>Status Kontrak : </label>
-                                                                            <input class="form-control" type="text" name="status_kontrak" placeholder="status kontrak" value="<?php echo $row->status_kontrak; ?>">
+                                                                            <input class="form-control" type="text" name="status_kontrak" placeholder="status kontrak" value="<?= $row->status_kontrak; ?>">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <div class="form-label-group">
                                                                             <label>Catatan : </label>
-                                                                            <input class="form-control" type="text" name="catatan" placeholder="catatan" value="<?php echo $row->catatan; ?>">
+                                                                            <input class="form-control" type="text" name="catatan" placeholder="catatan" value="<?= $row->catatan; ?>">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
@@ -441,7 +441,7 @@
                                                                             <label>Silahkan Input Dokumen PDF: </label>
                                                                             <input class="" type="file" id="file_umum" name="file_umum" accept=".pdf" >
                                                                             <br/><span style="color: red;">UKURAN FILE MAKS 2MB!!</span>
-                                                                            <input type="text" name="hidden_file" value="<?php echo $row->file; ?>" hidden>
+                                                                            <input type="text" name="hidden_file" value="<?= $row->file; ?>" hidden>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
@@ -456,10 +456,10 @@
                                                     </div>
 
 
-                                                <a href="" class="btn btn-danger" data-toggle="modal" data-target="#deleteperjanjianumum<?php echo $no_del = $id; ?>"><i class="fas fa-trash-alt"></i></a>
+                                                <a href="" class="btn btn-danger" data-toggle="modal" data-target="#deleteperjanjianumum<?= $no_del = $id; ?>"><i class="fas fa-trash-alt"></i></a>
 
                                                 <!-- Delete Modal -->
-                                                <div class="modal fade" id="deleteperjanjianumum<?php echo $no_del ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="deleteperjanjianumum<?= $no_del ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -470,7 +470,7 @@
                                                             </div>
                                                             <div class="modal-body">
                                                                 Apakah anda yakin ingin menghapus data no.<?= $nomor; ?> ?
-                                                                <form action="<?php echo base_url() ;?>PerjanjianUmum/delete_umum" method="POST">
+                                                                <form action="<?= base_url() ;?>PerjanjianUmum/delete_umum" method="POST">
                                                                     <input type="text" name="file_del" value="<?= $file;?>" hidden/>
                                                                     <input class="form-control" type="text" name="id_delete" value="<?= $id; ?>" hidden/>
                                                                     <br/>
@@ -533,7 +533,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url() ;?>Perjanjianumum/import_umum" method="POST" id="import_form" enctype="multipart/form-data">
+                    <form action="<?= base_url() ;?>Perjanjianumum/import_umum" method="POST" id="import_form" enctype="multipart/form-data">
                         <label>Silahkan Input File Excel</label>
                         <br/>
                         <input type="file" name="file_excel_umum" id="file_excel_umum" required accept=".xls, .xlsx"/>
@@ -579,7 +579,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url() ;?>Perjanjianumum/tambah_umum" enctype="multipart/form-data" method="POST">
+                    <form action="<?= base_url() ;?>Perjanjianumum/tambah_umum" enctype="multipart/form-data" method="POST">
                         <div class="form-group">
                             <div class="form-label-group">
                                 <label>No Perjanjian : </label>

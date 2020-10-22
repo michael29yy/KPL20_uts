@@ -35,7 +35,7 @@
         <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url();?>Dashboard">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url();?>Dashboard">
                 <div class="sidebar-brand-icon ">
                     <i class="fas fa-balance-scale"></i>
                 </div>
@@ -47,7 +47,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="<?php echo base_url();?>Dashboard">
+                <a class="nav-link" href="<?= base_url();?>Dashboard">
                     <i class="fas fa-fw fa-desktop"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -69,11 +69,11 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu :</h6>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>Leasing">Leasing </a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>Asuransi">Asuransi</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>Sewa">Sewa Unit</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>Jualbeli">Jual Beli</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>PerjanjianUmum">Umum</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>Leasing">Leasing </a>
+                        <a class="collapse-item" href="<?= base_url() ;?>Asuransi">Asuransi</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>Sewa">Sewa Unit</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>Jualbeli">Jual Beli</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>PerjanjianUmum">Umum</a>
                     </div>
                 </div>
             </li>
@@ -87,11 +87,11 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu :</h6>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>KLH">KLH</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>B3">B3</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>STNK">STNK</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>KIR">KIR</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>PerizinanUmum">Umum</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>KLH">KLH</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>B3">B3</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>STNK">STNK</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>KIR">KIR</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>PerizinanUmum">Umum</a>
                     </div>
                 </div>
             </li>
@@ -105,8 +105,8 @@
                 <div id="collapseAset" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu :</h6>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>AsetBergerak">Aset Bergerak</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>AsetTidakBergerak">Aset Tidak Bergerak</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>AsetBergerak">Aset Bergerak</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>AsetTidakBergerak">Aset Tidak Bergerak</a>
                     </div>
                 </div>
             </li>
@@ -120,7 +120,7 @@
 
             <!-- Nav Item - Purchase -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url() ;?>LogActivity">
+                <a class="nav-link" href="<?= base_url() ;?>LogActivity">
                     <i class="fas fa-fw fa-th-list"></i>
                     <span>Log Activity</span>
                 </a>

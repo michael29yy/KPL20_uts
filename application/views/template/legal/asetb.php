@@ -33,7 +33,7 @@
         <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url();?>Dashboard">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url();?>Dashboard">
                 <div class="sidebar-brand-icon ">
                     <i class="fas fa-balance-scale"></i>
                 </div>
@@ -45,7 +45,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url();?>Dashboard">
+                <a class="nav-link" href="<?= base_url();?>Dashboard">
                     <i class="fas fa-fw fa-desktop"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -67,11 +67,11 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu :</h6>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>Leasing">Leasing </a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>Asuransi">Asuransi</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>Sewa">Sewa Unit</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>Jualbeli">Jual Beli</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>PerjanjianUmum">Umum</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>Leasing">Leasing </a>
+                        <a class="collapse-item" href="<?= base_url() ;?>Asuransi">Asuransi</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>Sewa">Sewa Unit</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>Jualbeli">Jual Beli</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>PerjanjianUmum">Umum</a>
                     </div>
                 </div>
             </li>
@@ -85,11 +85,11 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu :</h6>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>KLH">KLH</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>B3">B3</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>STNK">STNK</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>KIR">KIR</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>PerizinanUmum">Umum</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>KLH">KLH</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>B3">B3</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>STNK">STNK</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>KIR">KIR</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>PerizinanUmum">Umum</a>
                     </div>
                 </div>
             </li>
@@ -103,8 +103,8 @@
                 <div id="collapseAset" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu :</h6>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>AsetBergerak">Aset Bergerak</a>
-                        <a class="collapse-item" href="<?php echo base_url() ;?>AsetTidakBergerak">Aset Tidak Bergerak</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>AsetBergerak">Aset Bergerak</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>AsetTidakBergerak">Aset Tidak Bergerak</a>
                     </div>
                 </div>
             </li>
@@ -118,7 +118,7 @@
 
             <!-- Nav Item - Purchase -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url() ;?>LogActivity">
+                <a class="nav-link" href="<?= base_url() ;?>LogActivity">
                     <i class="fas fa-fw fa-th-list"></i>
                     <span>Log Activity</span>
                 </a>
@@ -253,7 +253,7 @@
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#importexcelalatberatmodal">Import Excel Alat Berat</button>
                                 </div>
 
-                                <form action="<?php echo base_url() ;?>AsetBergerak/download_format_excel_alat_berat" enctype="multipart/form-data" method="POST">
+                                <form action="<?= base_url() ;?>AsetBergerak/download_format_excel_alat_berat" enctype="multipart/form-data" method="POST">
                                     <div class="mr-2">
                                         <button class="btn btn-primary" type="submit" name="download_format_excel_alat_berat">Download Excel Format</button>
                                     </div>
@@ -310,13 +310,13 @@
                                                                 <td><?=$row->atas_nama ?></td>
                                                                 <td>
                                                                     <!-- View File -->
-                                                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#filemodal<?php echo $no_id = $id; ?>"><i class="fas fa-fw fa-file-pdf"></i></a>
+                                                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#filemodal<?= $no_id = $id; ?>"><i class="fas fa-fw fa-file-pdf"></i></a>
                                                                     <!--File Modal-->
                                                                     <?php
                                                                         $pth_file = "assets/files/".$file;
                                                                         if (!$file or !file_exists($pth_file)): 
                                                                     ?>
-                                                                    <div class="modal fade" id="filemodal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="filemodal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                         <div class="modal-dialog" role="document">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
@@ -332,20 +332,20 @@
                                                                     <?php
                                                                         else: 
                                                                     ?>
-                                                                    <div class="modal fade" id="filemodal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="filemodal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                         <div class="modal-dialog modal-xl" role="document">
                                                                             <div class="modal-content">
-                                                                                    <embed src="<?= base_url();?>assets/files/<?php echo $row->file;?>" type="application/pdf" width="100%" height="600px"></embed>
+                                                                                    <embed src="<?= base_url();?>assets/files/<?= $row->file;?>" type="application/pdf" width="100%" height="600px"></embed>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <?php endif; ?>
 
                                                                     <!-- View Gambar -->
-                                                                    <a href="" class="btn btn-default" style="background-color: darkcyan;" data-toggle="modal" data-target=#gambaralatberatmodal<?php echo $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-file-image"></i></a>
+                                                                    <a href="" class="btn btn-default" style="background-color: darkcyan;" data-toggle="modal" data-target=#gambaralatberatmodal<?= $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-file-image"></i></a>
 
                                                                     <!-- Modal Image -->
-                                                                    <div class="modal fade" id="gambaralatberatmodal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="gambaralatberatmodal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                                                                             <div style="background-color: black;" class="modal-content">
                                                                                 <div id="demo<?= $no_id ?>" class="carousel slide">
@@ -362,7 +362,7 @@
                                                                                             <?php 
                                                                                                 if ($g1 != NULL):
                                                                                             ?>
-                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_alat_berat/<?php echo $g1; ?>">
+                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_alat_berat/<?= $g1; ?>">
                                                                                                     <div class="carousel-caption">
                                                                                                         <h3 style="color: white;">Gambar 1 <br/><?= $g1;?></h3>
                                                                                                     </div>
@@ -381,7 +381,7 @@
                                                                                             <?php 
                                                                                                 if ($g2 != NULL):
                                                                                             ?>
-                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_alat_berat/<?php echo $g2; ?>">
+                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_alat_berat/<?= $g2; ?>">
                                                                                                     <div class="carousel-caption">
                                                                                                         <h3 style="color: white;">Gambar 2 <br/><?= $g2;?></h3>
                                                                                                     </div>
@@ -400,7 +400,7 @@
                                                                                             <?php 
                                                                                                 if ($g3 != NULL):
                                                                                             ?>
-                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_alat_berat/<?php echo $g3; ?>">
+                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_alat_berat/<?= $g3; ?>">
                                                                                                     <div class="carousel-caption">
                                                                                                         <h3 style="color: white;">Gambar 3 <br/><?= $g3;?></h3>
                                                                                                     </div>
@@ -430,10 +430,10 @@
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <a href="" class="btn btn-default" style="background-color: lime;" data-toggle="modal" data-target=#detailalatberatmodal<?php echo $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-search"></i></a>
+                                                                    <a href="" class="btn btn-default" style="background-color: lime;" data-toggle="modal" data-target=#detailalatberatmodal<?= $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-search"></i></a>
 
                                                                     <!-- Detail Modal -->
-                                                                    <div class="modal fade" id="detailalatberatmodal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="detailalatberatmodal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                         <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
@@ -459,15 +459,15 @@
                                                                                         </thead>
                                                                                         <tbody>
                                                                                             <tr>
-                                                                                                <td><?php echo $row->no_lambung; ?></td>
-                                                                                                <td><?php echo $row->serial_number; ?></td>
-                                                                                                <td><?php echo $row->tahun_unit; ?></td>
-                                                                                                <td><?php echo $row->atas_nama; ?></td>
-                                                                                                <td><?php echo $row->nomor_invoice; ?></td>
-                                                                                                <td><?php echo $row->kedatangan_unit; ?></td>
-                                                                                                <td><?php echo $row->harga_perolehan; ?></td>
-                                                                                                <td><?php echo $row->nomor_leasing; ?></td>
-                                                                                                <td><?php echo $row->keterangan; ?></td>
+                                                                                                <td><?= $row->no_lambung; ?></td>
+                                                                                                <td><?= $row->serial_number; ?></td>
+                                                                                                <td><?= $row->tahun_unit; ?></td>
+                                                                                                <td><?= $row->atas_nama; ?></td>
+                                                                                                <td><?= $row->nomor_invoice; ?></td>
+                                                                                                <td><?= $row->kedatangan_unit; ?></td>
+                                                                                                <td><?= $row->harga_perolehan; ?></td>
+                                                                                                <td><?= $row->nomor_leasing; ?></td>
+                                                                                                <td><?= $row->keterangan; ?></td>
                                                                                             </tr>
                                                                                         </tbody>
                                                                                     </table>
@@ -476,10 +476,10 @@
                                                                         </div>
                                                                     </div>
 
-                                                                    <a href="" class="btn btn-warning" data-toggle="modal" data-target="#editalatberat<?php echo $no_ed = $id; ?>"><i class="fas fa-fw fa-edit"></i></a>
+                                                                    <a href="" class="btn btn-warning" data-toggle="modal" data-target="#editalatberat<?= $no_ed = $id; ?>"><i class="fas fa-fw fa-edit"></i></a>
 
                                                                     <!-- Edit AlatBerat Modal -->
-                                                                    <div class="modal fade" id="editalatberat<?php echo $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="editalatberat<?= $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                         <div class="modal-dialog" role="document">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
@@ -489,8 +489,8 @@
                                                                                     </button>
                                                                                 </div>
                                                                                 <div class="modal-body">
-                                                                                    <form action="<?php echo base_url() ;?>AsetBergerak/update_aset_alat_berat" enctype="multipart/form-data" method="POST">
-                                                                                        <input type="text" name="hidden_id" value="<?php echo $no_ed; ?>" hidden>
+                                                                                    <form action="<?= base_url() ;?>AsetBergerak/update_aset_alat_berat" enctype="multipart/form-data" method="POST">
+                                                                                        <input type="text" name="hidden_id" value="<?= $no_ed; ?>" hidden>
                                                                                         <div class="form-group">
                                                                                             <div class="form-label-group">
                                                                                                 <label>No. Lambung: </label>
@@ -565,10 +565,10 @@
                                                                     </div>
 
                                                                     <!--Edit Gambar-->
-                                                                    <a href="" class="btn btn-default" style="background-color: darkcyan;" data-toggle="modal" data-target=#editgambaralatberatmodal<?php echo $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-images"></i></a>
+                                                                    <a href="" class="btn btn-default" style="background-color: darkcyan;" data-toggle="modal" data-target=#editgambaralatberatmodal<?= $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-images"></i></a>
 
                                                                     <!--Modal Edit Gambar Alat Berat-->
-                                                                    <div class="modal fade" id="editgambaralatberatmodal<?php echo $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="editgambaralatberatmodal<?= $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                         <div class="modal-dialog" role="document">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
@@ -578,8 +578,8 @@
                                                                                     </button>
                                                                                 </div>
                                                                                 <div class="modal-body">
-                                                                                    <form action="<?php echo base_url() ;?>AsetBergerak/update_gambar_alat_berat" enctype="multipart/form-data" method="POST">
-                                                                                        <input type="text" name="hidden_id_gbr" value="<?php echo $no_ed; ?>" hidden>
+                                                                                    <form action="<?= base_url() ;?>AsetBergerak/update_gambar_alat_berat" enctype="multipart/form-data" method="POST">
+                                                                                        <input type="text" name="hidden_id_gbr" value="<?= $no_ed; ?>" hidden>
                                                                                         <div class="form-group">
                                                                                             <div class="form-label-group">
                                                                                                 <label style="color: red;">PENTING!!</label>
@@ -625,7 +625,7 @@
                                                                     <a href="" class="btn btn-danger" data-toggle="modal" data-target="#deleteasetalatberat<?= $no_del = $id; ?>"><i class="fas fa-fw fa-trash-alt"></i></a>
 
                                                                     <!-- Delete Data Alat Berat -->
-                                                                    <div class="modal fade" id="deleteasetalatberat<?php echo $no_del ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="deleteasetalatberat<?= $no_del ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                         <div class="modal-dialog" role="document">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
@@ -636,7 +636,7 @@
                                                                                 </div>
                                                                                 <div class="modal-body">
                                                                                     Apakah anda yakin ingin menghapus data no.<?= $nomor; ?> ?
-                                                                                    <form action="<?php echo base_url() ;?>AsetBergerak/delete_aset_alat_berat" method="POST">
+                                                                                    <form action="<?= base_url() ;?>AsetBergerak/delete_aset_alat_berat" method="POST">
                                                                                         <input type="text" name="file_del" value="<?= $file;?>" hidden/>
                                                                                         <input type="text" name="gambar1_del" value="<?= $g1;?>" hidden/>
                                                                                         <input type="text" name="gambar2_del" value="<?= $g2;?>" hidden/>
@@ -677,7 +677,7 @@
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#importexcelkendaraanmodal">Import Excel Kendaraan</button>
                                 </div>
 
-                                <form action="<?php echo base_url() ;?>AsetBergerak/download_format_excel_kendaraan" enctype="multipart/form-data" method="POST">
+                                <form action="<?= base_url() ;?>AsetBergerak/download_format_excel_kendaraan" enctype="multipart/form-data" method="POST">
                                     <div class="mr-2">
                                         <button class="btn btn-primary" type="submit" name="download_format_excel_kendaraan">Download Excel Format</button>
                                     </div>
@@ -726,19 +726,19 @@
                                                             $g3 = $row->gambar3;				                                            
 				                                ?> 
 					                                		<tr>
-					                                			<td><?php echo $nomor+=1; ?></td>
-					                                			<td><?php echo $row->jenis; ?></td>
-					                                			<td><?php echo $row->no_lambung; ?></td>
-					                                			<td><?php echo $row->no_plat; ?></td>
-                                                                <td><?php echo $row->tahun_unit; ?></td>
+					                                			<td><?= $nomor+=1; ?></td>
+					                                			<td><?= $row->jenis; ?></td>
+					                                			<td><?= $row->no_lambung; ?></td>
+					                                			<td><?= $row->no_plat; ?></td>
+                                                                <td><?= $row->tahun_unit; ?></td>
 					                                			<td>
-					                                				<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#filemodal2<?php echo $no_id = $id; ?>"><i class="fas fa-fw fa-file-pdf"></i></a>
+					                                				<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#filemodal2<?= $no_id = $id; ?>"><i class="fas fa-fw fa-file-pdf"></i></a>
 					                                                <!--File Modal-->
 					                                                <?php
 					                                                    $pth_file = "assets/files/".$file;
                                                                         if (!$file or !file_exists($pth_file)): 
 					                                                ?>
-					                                                <div class="modal fade" id="filemodal2<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					                                                <div class="modal fade" id="filemodal2<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					                                                    <div class="modal-dialog" role="document">
 					                                                        <div class="modal-content">
 					                                                            <div class="modal-header">
@@ -754,20 +754,20 @@
 					                                                <?php
 					                                                    else: 
 					                                                ?>
-					                                                <div class="modal fade" id="filemodal2<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					                                                <div class="modal fade" id="filemodal2<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					                                                    <div class="modal-dialog modal-xl" role="document">
 					                                                        <div class="modal-content">
-					                                                                <embed src="<?= base_url();?>assets/files/<?php echo $row->file;?>" type="application/pdf" width="100%" height="600px"></embed>
+					                                                                <embed src="<?= base_url();?>assets/files/<?= $row->file;?>" type="application/pdf" width="100%" height="600px"></embed>
 					                                                        </div>
 					                                                    </div>
 					                                                </div>
 					                                                <?php endif; ?>
 
                                                                     <!-- View Gambar Kendaraan-->
-                                                                    <a href="" class="btn btn-default" style="background-color: darkcyan; margin: auto;" data-toggle="modal" data-target=#gambarkendaraanmodal<?php echo $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-file-image"></i></a>
+                                                                    <a href="" class="btn btn-default" style="background-color: darkcyan; margin: auto;" data-toggle="modal" data-target=#gambarkendaraanmodal<?= $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-file-image"></i></a>
 
                                                                     <!-- Modal Image Kendaraan -->
-                                                                    <div class="modal fade" id="gambarkendaraanmodal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="gambarkendaraanmodal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                                                                             <div style="background-color: black;" class="modal-content">
                                                                                 <div id="demok<?= $no_id ?>" class="carousel slide">
@@ -784,7 +784,7 @@
                                                                                             <?php 
                                                                                                 if ($g1 != NULL):
                                                                                             ?>
-                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_kendaraan/<?php echo $g1; ?>">
+                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_kendaraan/<?= $g1; ?>">
                                                                                                     <div class="carousel-caption">
                                                                                                         <h3 style="color: white;">Gambar 1 <br/><?= $g1;?></h3>
                                                                                                     </div>
@@ -803,7 +803,7 @@
                                                                                             <?php 
                                                                                                 if ($g2 != NULL):
                                                                                             ?>
-                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_kendaraan/<?php echo $g2; ?>">
+                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_kendaraan/<?= $g2; ?>">
                                                                                                     <div class="carousel-caption">
                                                                                                         <h3 style="color: white;">Gambar 2 <br/><?= $g2;?></h3>
                                                                                                     </div>
@@ -822,7 +822,7 @@
                                                                                             <?php 
                                                                                                 if ($g3 != NULL):
                                                                                             ?>
-                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_kendaraan/<?php echo $g3; ?>">
+                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_kendaraan/<?= $g3; ?>">
                                                                                                     <div class="carousel-caption">
                                                                                                         <h3 style="color: white;">Gambar 3 <br/><?= $g3;?></h3>
                                                                                                     </div>
@@ -853,10 +853,10 @@
 					                                			</td>
 					                                			<td>
                                                                     <!-- Detail -->
-					                                				<a href="" class="btn btn-default" style="background-color: lime; margin: auto;" data-toggle="modal" data-target=#detailkendaraanmodal<?php echo $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-search"></i></a>
+					                                				<a href="" class="btn btn-default" style="background-color: lime; margin: auto;" data-toggle="modal" data-target=#detailkendaraanmodal<?= $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-search"></i></a>
 
 						                                            <!-- Detail Modal -->
-						                                            <div class="modal fade" id="detailkendaraanmodal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						                                            <div class="modal fade" id="detailkendaraanmodal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						                                                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 						                                                    <div class="modal-content">
 						                                                        <div class="modal-header">
@@ -1045,10 +1045,10 @@
 						                                                </div>
 						                                            </div>
 
-						                                            <a style="margin: auto;" href="" class="btn btn-warning" data-toggle="modal" data-target="#editkendaraan<?php echo $no_ed = $id; ?>"><i class="fas fa-fw fa-edit"></i></a>
+						                                            <a style="margin: auto;" href="" class="btn btn-warning" data-toggle="modal" data-target="#editkendaraan<?= $no_ed = $id; ?>"><i class="fas fa-fw fa-edit"></i></a>
 
                                                                     <!-- Edit Kendaraan Modal -->
-                                                                    <div class="modal fade" id="editkendaraan<?php echo $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="editkendaraan<?= $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                         <div class="modal-dialog" role="document">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
@@ -1058,8 +1058,8 @@
                                                                                     </button>
                                                                                 </div>
                                                                                 <div class="modal-body">
-                                                                                    <form action="<?php echo base_url() ;?>AsetBergerak/update_aset_kendaraan" enctype="multipart/form-data" method="POST">
-                                                                                        <input type="text" name="hidden_id" value="<?php echo $no_ed; ?>" hidden>
+                                                                                    <form action="<?= base_url() ;?>AsetBergerak/update_aset_kendaraan" enctype="multipart/form-data" method="POST">
+                                                                                        <input type="text" name="hidden_id" value="<?= $no_ed; ?>" hidden>
                                                                                         <div class="form-group">
                                                                                             <div class="form-label-group">
                                                                                                 <label>Jenis: </label>
@@ -1158,10 +1158,10 @@
                                                                     </div>
 
                                                                     <!--Edit Gambar-->
-                                                                    <a href="" class="btn btn-default" style="background-color: darkcyan;" data-toggle="modal" data-target=#editgambarkendaraanmodal<?php echo $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-images"></i></a>
+                                                                    <a href="" class="btn btn-default" style="background-color: darkcyan;" data-toggle="modal" data-target=#editgambarkendaraanmodal<?= $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-images"></i></a>
 
                                                                     <!--Modal Edit Gambar Kendaraan-->
-                                                                    <div class="modal fade" id="editgambarkendaraanmodal<?php echo $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="editgambarkendaraanmodal<?= $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                         <div class="modal-dialog" role="document">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
@@ -1171,8 +1171,8 @@
                                                                                     </button>
                                                                                 </div>
                                                                                 <div class="modal-body">
-                                                                                    <form action="<?php echo base_url() ;?>AsetBergerak/update_gambar_kendaraan" enctype="multipart/form-data" method="POST">
-                                                                                        <input type="text" name="hidden_id_gbr" value="<?php echo $no_ed; ?>" hidden>
+                                                                                    <form action="<?= base_url() ;?>AsetBergerak/update_gambar_kendaraan" enctype="multipart/form-data" method="POST">
+                                                                                        <input type="text" name="hidden_id_gbr" value="<?= $no_ed; ?>" hidden>
                                                                                         <div class="form-group">
                                                                                             <div class="form-label-group">
                                                                                                 <label style="color: red;">PENTING!!</label>
@@ -1218,7 +1218,7 @@
 						                                            <a style="margin: auto;" href="" class="btn btn-danger" data-toggle="modal" data-target="#deleteasetkendaraan<?= $no_del= $id;?>"><i class="fas fa-fw fa-trash-alt"></i></a>
 
                                                                     <!-- Delete Data Kendaraan -->
-                                                                    <div class="modal fade" id="deleteasetkendaraan<?php echo $no_del ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="deleteasetkendaraan<?= $no_del ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                         <div class="modal-dialog" role="document">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
@@ -1229,7 +1229,7 @@
                                                                                 </div>
                                                                                 <div class="modal-body">
                                                                                     Apakah anda yakin ingin menghapus data no.<?= $nomor; ?> ?
-                                                                                    <form action="<?php echo base_url() ;?>AsetBergerak/delete_aset_kendaraan" method="POST">
+                                                                                    <form action="<?= base_url() ;?>AsetBergerak/delete_aset_kendaraan" method="POST">
                                                                                         <input type="text" name="file_del" value="<?= $file;?>" hidden/>
                                                                                         <input type="text" name="gambar1_del" value="<?= $g1;?>" hidden/>
                                                                                         <input type="text" name="gambar2_del" value="<?= $g2;?>" hidden/>
@@ -1275,7 +1275,7 @@
                                 
                                 </div>
 
-                                <form action="<?php echo base_url() ;?>AsetBergerak/download_format_excel_property" enctype="multipart/form-data" method="POST">
+                                <form action="<?= base_url() ;?>AsetBergerak/download_format_excel_property" enctype="multipart/form-data" method="POST">
                                     <div class="mr-2">
                                         <button class="btn btn-primary" type="submit" name="download_format_excel_property">Download Excel Format</button>
                                     </div>
@@ -1324,19 +1324,19 @@
                                                             $g3 = $row->gambar3;				                                            
 				                                ?>
 					                                		<tr>
-					                                			<td><?php echo $nomor+=1; ?></td>
-					                                			<td><?php echo $row->jenis; ?></td>
-					                                			<td><?php echo $row->merk; ?></td>
-					                                			<td><?php echo $row->no_identitas; ?></td>
-					                                			<td><?php echo $row->atas_nama; ?></td>
+					                                			<td><?= $nomor+=1; ?></td>
+					                                			<td><?= $row->jenis; ?></td>
+					                                			<td><?= $row->merk; ?></td>
+					                                			<td><?= $row->no_identitas; ?></td>
+					                                			<td><?= $row->atas_nama; ?></td>
 					                                			<td>
-					                                				<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#filemodal3<?php echo $no_id = $id; ?>"><i class="fas fa-fw fa-file-pdf"></i></a>
+					                                				<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#filemodal3<?= $no_id = $id; ?>"><i class="fas fa-fw fa-file-pdf"></i></a>
 					                                                <!--File Modal-->
 					                                                <?php
 					                                                    $pth_file = "assets/files/".$file;
                                                                         if (!$file or !file_exists($pth_file)): 
 					                                                ?>
-					                                                <div class="modal fade" id="filemodal3<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					                                                <div class="modal fade" id="filemodal3<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					                                                    <div class="modal-dialog" role="document">
 					                                                        <div class="modal-content">
 					                                                            <div class="modal-header">
@@ -1352,20 +1352,20 @@
 					                                                <?php
 					                                                    else: 
 					                                                ?>
-					                                                <div class="modal fade" id="filemodal3<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					                                                <div class="modal fade" id="filemodal3<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					                                                    <div class="modal-dialog modal-xl" role="document">
 					                                                        <div class="modal-content">
-					                                                                <embed src="<?= base_url();?>assets/files/<?php echo $row->file;?>" type="application/pdf" width="100%" height="600px"></embed>
+					                                                                <embed src="<?= base_url();?>assets/files/<?= $row->file;?>" type="application/pdf" width="100%" height="600px"></embed>
 					                                                        </div>
 					                                                    </div>
 					                                                </div>
 					                                                <?php endif; ?>
 
                                                                     <!-- View Gambar Property-->
-                                                                    <a href="" class="btn btn-default" style="background-color: darkcyan; margin: auto;" data-toggle="modal" data-target=#gambarpropertymodal<?php echo $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-file-image"></i></a>
+                                                                    <a href="" class="btn btn-default" style="background-color: darkcyan; margin: auto;" data-toggle="modal" data-target=#gambarpropertymodal<?= $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-file-image"></i></a>
 
                                                                     <!-- Modal Image Property-->
-                                                                    <div class="modal fade" id="gambarpropertymodal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="gambarpropertymodal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                                                                             <div style="background-color: black;" class="modal-content">
                                                                                 <div id="demop<?= $no_id ?>" class="carousel slide">
@@ -1382,7 +1382,7 @@
                                                                                             <?php 
                                                                                                 if ($g1 != NULL):
                                                                                             ?>
-                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_property/<?php echo $g1; ?>">
+                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_property/<?= $g1; ?>">
                                                                                                     <div class="carousel-caption">
                                                                                                         <h3 style="color: white;">Gambar 1 <br/><?= $g1;?></h3>
                                                                                                     </div>
@@ -1401,7 +1401,7 @@
                                                                                             <?php 
                                                                                                 if ($g2 != NULL):
                                                                                             ?>
-                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_property/<?php echo $g2; ?>">
+                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_property/<?= $g2; ?>">
                                                                                                     <div class="carousel-caption">
                                                                                                         <h3 style="color: white;">Gambar 2 <br/><?= $g2;?></h3>
                                                                                                     </div>
@@ -1420,7 +1420,7 @@
                                                                                             <?php 
                                                                                                 if ($g3 != NULL):
                                                                                             ?>
-                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_property/<?php echo $g3; ?>">
+                                                                                                    <img width="100%" src="<?= base_url();?>assets/img/img_property/<?= $g3; ?>">
                                                                                                     <div class="carousel-caption">
                                                                                                         <h3 style="color: white;">Gambar 3 <br/><?= $g3;?></h3>
                                                                                                     </div>
@@ -1451,10 +1451,10 @@
 					                                			</td>
 					                                			<td>
                                                                     <!-- Detail -->
-					                                				<a href="" class="btn btn-default" style="background-color: lime;" data-toggle="modal" data-target=#detailpropertymodal<?php echo $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-search"></i></a>
+					                                				<a href="" class="btn btn-default" style="background-color: lime;" data-toggle="modal" data-target=#detailpropertymodal<?= $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-search"></i></a>
 
 						                                            <!-- Detail Modal -->
-						                                            <div class="modal fade" id="detailpropertymodal<?php echo $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						                                            <div class="modal fade" id="detailpropertymodal<?= $no_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						                                                <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
 						                                                    <div class="modal-content">
 						                                                        <div class="modal-header">
@@ -1479,14 +1479,14 @@
 						                                                                </thead>
 						                                                                <tbody>
 						                                                                    <tr>
-						                                                                        <td><?php echo $row->jenis; ?></td>
-													                                			<td><?php echo $row->merk; ?></td>
-													                                			<td><?php echo $row->no_identitas; ?></td>
-													                                			<td><?php echo $row->atas_nama; ?></td>
-													                                			<td><?php echo $row->harga_perolehan; ?></td>
-													                                			<td><?php echo $row->no_perjanjian; ?></td>
-													                                			<td><?php echo $row->kedatangan_unit; ?></td>
-													                                			<td><?php echo $row->tahun_unit; ?></td>
+						                                                                        <td><?= $row->jenis; ?></td>
+													                                			<td><?= $row->merk; ?></td>
+													                                			<td><?= $row->no_identitas; ?></td>
+													                                			<td><?= $row->atas_nama; ?></td>
+													                                			<td><?= $row->harga_perolehan; ?></td>
+													                                			<td><?= $row->no_perjanjian; ?></td>
+													                                			<td><?= $row->kedatangan_unit; ?></td>
+													                                			<td><?= $row->tahun_unit; ?></td>
 						                                                                    </tr>
 						                                                                </tbody>
 						                                                            </table>
@@ -1495,10 +1495,10 @@
 						                                                </div>
 						                                            </div>
                                                                     <!-- Edit Aset Property-->
-						  											<a href="" class="btn btn-warning" data-toggle="modal" data-target="#editproperty<?php echo $no_ed = $id; ?>"><i class="fas fa-fw fa-edit"></i></a>
+						  											<a href="" class="btn btn-warning" data-toggle="modal" data-target="#editproperty<?= $no_ed = $id; ?>"><i class="fas fa-fw fa-edit"></i></a>
 
                                                                     <!-- Edit Property Modal -->
-                                                                    <div class="modal fade" id="editproperty<?php echo $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="editproperty<?= $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                         <div class="modal-dialog" role="document">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
@@ -1508,8 +1508,8 @@
                                                                                     </button>
                                                                                 </div>
                                                                                 <div class="modal-body">
-                                                                                    <form action="<?php echo base_url() ;?>AsetBergerak/update_aset_property" enctype="multipart/form-data" method="POST">
-                                                                                        <input type="text" name="hidden_id" value="<?php echo $no_ed; ?>" hidden>
+                                                                                    <form action="<?= base_url() ;?>AsetBergerak/update_aset_property" enctype="multipart/form-data" method="POST">
+                                                                                        <input type="text" name="hidden_id" value="<?= $no_ed; ?>" hidden>
                                                                                         <div class="form-group">
                                                                                             <div class="form-label-group">
                                                                                                 <label>Jenis: </label>
@@ -1579,10 +1579,10 @@
                                                                     </div>
 
                                                                     <!--Edit Gambar-->
-                                                                    <a href="" class="btn btn-default" style="background-color: darkcyan;" data-toggle="modal" data-target=#editgambarpropertymodal<?php echo $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-images"></i></a>
+                                                                    <a href="" class="btn btn-default" style="background-color: darkcyan;" data-toggle="modal" data-target=#editgambarpropertymodal<?= $no_id = $id; ?>><i style="color: white;" class="fas fa-fw fa-images"></i></a>
 
                                                                     <!--Modal Edit Gambar Kendaraan-->
-                                                                    <div class="modal fade" id="editgambarpropertymodal<?php echo $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="editgambarpropertymodal<?= $no_ed ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                         <div class="modal-dialog" role="document">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
@@ -1592,8 +1592,8 @@
                                                                                     </button>
                                                                                 </div>
                                                                                 <div class="modal-body">
-                                                                                    <form action="<?php echo base_url() ;?>AsetBergerak/update_gambar_property" enctype="multipart/form-data" method="POST">
-                                                                                        <input type="text" name="hidden_id_gbr" value="<?php echo $no_ed; ?>" hidden>
+                                                                                    <form action="<?= base_url() ;?>AsetBergerak/update_gambar_property" enctype="multipart/form-data" method="POST">
+                                                                                        <input type="text" name="hidden_id_gbr" value="<?= $no_ed; ?>" hidden>
                                                                                         <div class="form-group">
                                                                                             <div class="form-label-group">
                                                                                                 <label style="color: red;">PENTING!!</label>
@@ -1639,7 +1639,7 @@
 						                                            <a href="" class="btn btn-danger" data-toggle="modal" data-target="#deleteasetproperty<?= $no_del= $id;?>"><i class="fas fa-fw fa-trash-alt"></i></a>
 
                                                                     <!-- Delete Data Property -->
-                                                                    <div class="modal fade" id="deleteasetproperty<?php echo $no_del ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="deleteasetproperty<?= $no_del ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                         <div class="modal-dialog" role="document">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
@@ -1650,7 +1650,7 @@
                                                                                 </div>
                                                                                 <div class="modal-body">
                                                                                     Apakah anda yakin ingin menghapus data no.<?= $nomor; ?> ?
-                                                                                    <form action="<?php echo base_url() ;?>AsetBergerak/delete_aset_property" method="POST">
+                                                                                    <form action="<?= base_url() ;?>AsetBergerak/delete_aset_property" method="POST">
                                                                                         <input type="text" name="file_del" value="<?= $file;?>" hidden/>
                                                                                         <input type="text" name="gambar1_del" value="<?= $g1;?>" hidden/>
                                                                                         <input type="text" name="gambar2_del" value="<?= $g2;?>" hidden/>
@@ -1717,7 +1717,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url() ;?>AsetBergerak/import_alat_berat" method="POST" id="import_form" enctype="multipart/form-data">
+                    <form action="<?= base_url() ;?>AsetBergerak/import_alat_berat" method="POST" id="import_form" enctype="multipart/form-data">
                         <label>Silahkan Input File Excel</label>
                         <br/>
                         <input type="file" name="file_excel_alat_berat" id="file_excel_alat_berat" required accept=".xls, .xlsx"/>
@@ -1742,7 +1742,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url() ;?>AsetBergerak/import_kendaraan" method="POST" id="import_form" enctype="multipart/form-data">
+                    <form action="<?= base_url() ;?>AsetBergerak/import_kendaraan" method="POST" id="import_form" enctype="multipart/form-data">
                         <label>Silahkan Input File Excel</label>
                         <br/>
                         <input type="file" name="file_excel_kendaraan" id="file_excel_kendaraan" required accept=".xls, .xlsx"/>
@@ -1767,7 +1767,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url() ;?>AsetBergerak/import_property" method="POST" id="import_form" enctype="multipart/form-data">
+                    <form action="<?= base_url() ;?>AsetBergerak/import_property" method="POST" id="import_form" enctype="multipart/form-data">
                         <label>Silahkan Input File Excel</label>
                         <br/>
                         <input type="file" name="file_excel_property" id="file_excel_property" required accept=".xls, .xlsx"/>
@@ -1813,7 +1813,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url() ;?>AsetBergerak/tambah_aset_alat_berat" enctype="multipart/form-data" method="POST">
+                    <form action="<?= base_url() ;?>AsetBergerak/tambah_aset_alat_berat" enctype="multipart/form-data" method="POST">
                         <div class="form-group">
                             <div class="form-label-group">
                                 <label>No. Lambung: </label>
@@ -1897,7 +1897,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url() ;?>AsetBergerak/tambah_aset_kendaraan" enctype="multipart/form-data" method="POST">
+                    <form action="<?= base_url() ;?>AsetBergerak/tambah_aset_kendaraan" enctype="multipart/form-data" method="POST">
                         <div class="form-group">
                             <div class="form-label-group">
                                 <label>Jenis: </label>
@@ -2005,7 +2005,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url() ;?>AsetBergerak/tambah_aset_property" enctype="multipart/form-data" method="POST">
+                    <form action="<?= base_url() ;?>AsetBergerak/tambah_aset_property" enctype="multipart/form-data" method="POST">
                         <div class="form-group">
                             <div class="form-label-group">
                                 <label>Jenis: </label>
