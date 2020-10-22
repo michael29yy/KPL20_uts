@@ -34,8 +34,9 @@ class Sewa extends CI_Controller
     }
 
     public function import_sewa(){
-        if(isset($_FILES["file_excel_sewa"]["name"])){
-            $path = $_FILES["file_excel_sewa"]["tmp_name"];
+        $filenya = $_FILES["file_excel_sewa"];
+        if(isset($filenya["name"])){
+            $path = $filenya["tmp_name"];
             $object = PHPExcel_IOFactory::load($path);
 
             foreach ($object->getWorksheetIterator() as $worksheet) {
