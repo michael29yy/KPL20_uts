@@ -236,15 +236,15 @@ class AsetBergerak extends CI_Controller
         $config['allowed_types'] = 'jpg|jpeg';
         $this->load->library('upload', $config);
 
-        $upld1 = $this->upload->do_upload('file_gambar_alat_berat1');
+        $this->upload->do_upload('file_gambar_alat_berat1');
         $tsupld1 = $this->upload->data();
         $nmgambar_1 = $tsupld1['file_name'];
 
-        $upld2 = $this->upload->do_upload('file_gambar_alat_berat2');
+        $this->upload->do_upload('file_gambar_alat_berat2');
         $tsupld2 = $this->upload->data();
         $nmgambar_2 = $tsupld2['file_name'];        
         
-        $upld3 = $this->upload->do_upload('file_gambar_alat_berat3');
+        $this->upload->do_upload('file_gambar_alat_berat3');
         $tsupld3 = $this->upload->data();
         $nmgambar_3 = $tsupld3['file_name'];
 
@@ -638,15 +638,15 @@ class AsetBergerak extends CI_Controller
         $config['allowed_types'] = 'jpg|jpeg';
         $this->load->library('upload', $config);
 
-        $upld1 = $this->upload->do_upload('file_gambar_kendaraan1');
+        $this->upload->do_upload('file_gambar_kendaraan1');
         $tsupld1 = $this->upload->data();
         $nmgambar_1 = $tsupld1['file_name'];
         
-        $upld2 = $this->upload->do_upload('file_gambar_kendaraan2');
+        $this->upload->do_upload('file_gambar_kendaraan2');
         $tsupld2 = $this->upload->data();
         $nmgambar_2 = $tsupld2['file_name'];
         
-        $upld3 = $this->upload->do_upload('file_gambar_kendaraan3');
+        $this->upload->do_upload('file_gambar_kendaraan3');
         $tsupld3 = $this->upload->data();
         $nmgambar_3 = $tsupld3['file_name'];
         
@@ -1016,15 +1016,15 @@ class AsetBergerak extends CI_Controller
         $config['allowed_types'] = 'jpg|jpeg';
         $this->load->library('upload', $config);
 
-        $upld1 = $this->upload->do_upload('file_gambar_property1');
+        $this->upload->do_upload('file_gambar_property1');
         $tsupld1 = $this->upload->data();
         $nmgambar_1 = $tsupld1['file_name'];
         
-        $upld2 = $this->upload->do_upload('file_gambar_property2');
+        $this->upload->do_upload('file_gambar_property2');
         $tsupld2 = $this->upload->data();
         $nmgambar_2 = $tsupld2['file_name'];
 
-        $upld3 = $this->upload->do_upload('file_gambar_property3');
+        $this->upload->do_upload('file_gambar_property3');
         $tsupld3 = $this->upload->data();
         $nmgambar_3 = $tsupld3['file_name'];
 
