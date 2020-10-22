@@ -42,7 +42,6 @@ class AsetBergerak extends CI_Controller
 
             foreach ($object->getWorksheetIterator() as $worksheet) {
                 $highestRow = $worksheet->getHighestRow();
-                $highestColumn = $worksheet->getHighestColumn();
 
                 for ($row=2; $row<=$highestRow; $row++){
                     $no_lambung = $worksheet->getCellByColumnAndRow(0, $row)->getValue();
@@ -423,7 +422,7 @@ class AsetBergerak extends CI_Controller
 
             foreach ($object->getWorksheetIterator() as $worksheet) {
                 $highestRow = $worksheet->getHighestRow();
-                $highestColumn = $worksheet->getHighestColumn();
+                
 
                 for ($row=2; $row<=$highestRow; $row++){
                     $jenis = $worksheet->getCellByColumnAndRow(0, $row)->getValue();
@@ -827,7 +826,7 @@ class AsetBergerak extends CI_Controller
 
             foreach ($object->getWorksheetIterator() as $worksheet) {
                 $highestRow = $worksheet->getHighestRow();
-                $highestColumn = $worksheet->getHighestColumn();
+                
 
                 for ($row=2; $row<=$highestRow; $row++){
                     $jenis = $worksheet->getCellByColumnAndRow(0, $row)->getValue();

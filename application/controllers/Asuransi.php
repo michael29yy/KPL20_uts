@@ -42,7 +42,7 @@ class Asuransi extends CI_Controller
 
             foreach ($object->getWorksheetIterator() as $worksheet) {
                 $highestRow = $worksheet->getHighestRow();
-                $highestColumn = $worksheet->getHighestColumn();
+                
 
                 for ($row=2; $row<=$highestRow; $row++){
                     $nama_asuransi = $worksheet->getCellByColumnAndRow(0, $row)->getValue();

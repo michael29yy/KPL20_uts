@@ -40,7 +40,7 @@ class Sewa extends CI_Controller
 
             foreach ($object->getWorksheetIterator() as $worksheet) {
                 $highestRow = $worksheet->getHighestRow();
-                $highestColumn = $worksheet->getHighestColumn();
+                
 
                 for ($row=2; $row<=$highestRow; $row++){
                     $no_perjanjian = $worksheet->getCellByColumnAndRow(0, $row)->getValue();
