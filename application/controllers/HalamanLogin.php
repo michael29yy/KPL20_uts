@@ -4,7 +4,6 @@ class HalamanLogin extends CI_Controller{
 
 	public function __construct(){
 		parent::__construct();
-		$id_role = $this->session->userdata('id_role');
 		$username = $this->session->userdata('username');
 		if ($username) {
 			redirect('Dashboard');

@@ -9,7 +9,6 @@ class KLH extends CI_Controller
             redirect('HalamanLogin');
         }
         else{
-            $data['user'] = $this->db->get_where('data_admin', ['username' => $this->session->userdata('username')])->row_array();
             if ($this->session->userdata('id_role') != 29) {
                 redirect('HalamanLogin');
             }
