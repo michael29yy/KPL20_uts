@@ -86,7 +86,7 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu :</h6>
-                        <a class="collapse-item" href="<?= escapeshellcmd(base_url()) ;?>KLH">KLH</a>
+                        <a class="collapse-item" href="<?= base_url() ;?>KLH">KLH</a>
                         <a class="collapse-item" href="<?= base_url() ;?>B3">B3</a>
                         <a class="collapse-item" href="<?= base_url() ;?>STNK">STNK</a>
                         <a class="collapse-item" href="<?= base_url() ;?>KIR">KIR</a>
@@ -286,7 +286,7 @@
                                 ?>
                                             <tr>
                                                 <td><?= $nomor+=1; ?></td>
-                                                <td><?= "$row->no_perjanjian"; ?></td>
+                                                <td><?= $row->no_perjanjian; ?></td>
                                                 <td><?= escapeshellarg($row->nama_unit); ?></td>
                                                 <td><?= escapeshellarg($row->periode_mulai); ?></td>
                                                 
