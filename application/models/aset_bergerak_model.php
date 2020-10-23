@@ -41,48 +41,48 @@ class Aset_bergerak_model extends CI_Model
 		return $query2;
 	}
 
-	function update_data_alat_berat($data, $id){
-		$this->db->where("id", $id);
+	function update_data_alat_berat($data, $idmo){
+		$this->db->where("id", $idmo);
 		$this->db->update("aset_alat_berat", $data);
 	}
 
-	function update_data_kendaraan($data, $id){
-		$this->db->where("id", $id);
+	function update_data_kendaraan($data, $idmo){
+		$this->db->where("id", $idmo);
 		$this->db->update("aset_kendaraan", $data);
 	}
 
-	function update_data_property($data, $id){
-		$this->db->where("id", $id);
+	function update_data_property($data, $idmo){
+		$this->db->where("id", $idmo);
 		$this->db->update("aset_property", $data);
 	}
 
-	function update_gambar_alat_berat($data, $id){
-		$this->db->where("id", $id);
+	function update_gambar_alat_berat($data, $idmo){
+		$this->db->where("id", $idmo);
 		$this->db->update("aset_alat_berat", $data);
 	}
 
-	function update_gambar_kendaraan($data, $id){
-		$this->db->where("id", $id);
+	function update_gambar_kendaraan($data, $idmo){
+		$this->db->where("id", $idmo);
 		$this->db->update("aset_kendaraan", $data);
 	}
 
-	function update_gambar_property($data, $id){
-		$this->db->where("id", $id);
+	function update_gambar_property($data, $idmo){
+		$this->db->where("id", $idmo);
 		$this->db->update("aset_property", $data);
 	}
 
-	function delete_data_alat_berat($id){
-		$this->db->where("id", $id);
+	function delete_data_alat_berat($idmo){
+		$this->db->where("id", $idmo);
 		$this->db->delete("aset_alat_berat");
 	}
 
-	function delete_data_kendaraan($id){
-		$this->db->where("id", $id);
+	function delete_data_kendaraan($idmo){
+		$this->db->where("id", $idmo);
 		$this->db->delete("aset_kendaraan");
 	}
 
-	function delete_data_property($id){
-		$this->db->where("id", $id);
+	function delete_data_property($idmo){
+		$this->db->where("id", $idmo);
 		$this->db->delete("aset_property");
 	}
 

@@ -16,13 +16,13 @@ class Umum1_model extends CI_Model
 		return $query;
 	}
 
-	function update_data($data, $id){
-		$this->db->where("id", $id);
+	function update_data($data, $idmo){
+		$this->db->where("id", $idmo);
 		$this->db->update("umum_perjanjian", $data);
 	}
 
-	function delete_data($id){
-		$this->db->where("id", $id);
+	function delete_data($idmo){
+		$this->db->where("id", $idmo);
 		$this->db->delete("umum_perjanjian");
 	}
 

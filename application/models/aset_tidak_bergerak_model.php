@@ -15,23 +15,23 @@ class Aset_tidak_bergerak_model extends CI_Model
 		return $query;
 	}
 
-	function update_data_tanah($data, $id){
-		$this->db->where("id", $id);
+	function update_data_tanah($data, $idmo){
+		$this->db->where("id", $idmo);
 		$this->db->update("aset_tanah", $data);
 	}
 
-	function update_gambar_asettb($data, $id){
-		$this->db->where("id", $id);
+	function update_gambar_asettb($data, $idmo){
+		$this->db->where("id", $idmo);
 		$this->db->update("aset_tanah", $data);
 	}
 
-	function delete_data_aset_tanah($id){
-		$this->db->where("id", $id);
+	function delete_data_aset_tanah($idmo){
+		$this->db->where("id", $idmo);
 		$this->db->delete("aset_tanah");
 	}
 
-	/*function multi_del($id){
-		$this->db->where("id", $id);
+	/*function multi_del($idmo){
+		$this->db->where("id", $idmo);
 		$this->db->delete("aset_tanah");
 	}*/
 }

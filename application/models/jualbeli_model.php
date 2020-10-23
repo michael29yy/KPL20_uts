@@ -16,13 +16,13 @@ class Jualbeli_model extends CI_Model
 		return $query;
 	}
 
-	function update_data($data, $id){
-		$this->db->where("no_id", $id);
+	function update_data($data, $idmo){
+		$this->db->where("no_id", $idmo);
 		$this->db->update("jual_beli", $data);
 	}
 
-	function delete_data($id){
-		$this->db->where("no_id", $id);
+	function delete_data($idmo){
+		$this->db->where("no_id", $idmo);
 		$this->db->delete("jual_beli");
 	}
 
