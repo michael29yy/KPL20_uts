@@ -350,13 +350,13 @@
                                                                         </thead>
                                                                         <tbody>
                                                                             <tr>
-                                                                                <td><?= escapeshellcmd($row->no_perjanjian); ?></td>
-                                                                                <td><?= escapeshellcmd($row->nama_unit); ?></td>
-                                                                                <td><?= escapeshellcmd($row->jumlah); ?></td>
-                                                                                <td><?= escapeshellcmd($row->periode_mulai); ?></td>
-                                                                                <td><?= escapeshellcmd($row->periode_selesai); ?></td>
-                                                                                <td><?= escapeshellcmd($row->lessor); ?></td>
-                                                                                <td><?= escapeshellcmd($row->keterangan); ?></td>
+                                                                                <td><?= escapeshellarg($row->no_perjanjian); ?></td>
+                                                                                <td><?= escapeshellarg($row->nama_unit); ?></td>
+                                                                                <td><?= escapeshellarg($row->jumlah); ?></td>
+                                                                                <td><?= escapeshellarg($row->periode_mulai); ?></td>
+                                                                                <td><?= escapeshellarg($row->periode_selesai); ?></td>
+                                                                                <td><?= escapeshellarg($row->lessor); ?></td>
+                                                                                <td><?= escapeshellarg($row->keterangan); ?></td>
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
