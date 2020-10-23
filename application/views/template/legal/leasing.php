@@ -285,8 +285,8 @@
                                             $file = $row->file;
                                 ?>
                                             <tr>
-                                                <td><?= escapeshellcmd($nomor+=1); ?></td>
-                                                <td><?= escapeshellarg($row->no_perjanjian); ?></td>
+                                                <td><?= $nomor+=1; ?></td>
+                                                <td><?= "$row->no_perjanjian"; ?></td>
                                                 <td><?= escapeshellarg($row->nama_unit); ?></td>
                                                 <td><?= escapeshellarg($row->periode_mulai); ?></td>
                                                 
