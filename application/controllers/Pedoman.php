@@ -22,7 +22,7 @@ class Pedoman extends CI_Controller{
 	}
 
 	public function tambah_pedoman(){
-		$file = $_FILES['file_pedoman']['name'];
+		$file = isset($_FILES['file_pedoman']['name']);
 
         $config['upload_path'] = './assets/files/pedoman';
         $config['allowed_types'] = 'pdf|docx';
