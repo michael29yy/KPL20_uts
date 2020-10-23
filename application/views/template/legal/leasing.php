@@ -286,9 +286,9 @@
                                 ?>
                                             <tr>
                                                 <td><?= $nomor+=1; ?></td>
-                                                <td><?= $row->no_perjanjian; ?></td>
-                                                <td><?= $row->nama_unit; ?></td>
-                                                <td><?= $row->periode_mulai; ?></td>
+                                                <td><?= "$row->no_perjanjian"; ?></td>
+                                                <td><?= "$row->nama_unit"; ?></td>
+                                                <td><?= "$row->periode_mulai"; ?></td>
                                                 
                                                 <td>
                                                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#filemodal<?= $no_id = $id; ?>">View <i class="fas fa-fw fa-file-pdf"></i></a>
@@ -350,13 +350,13 @@
                                                                         </thead>
                                                                         <tbody>
                                                                             <tr>
-                                                                                <td><?= esc_attr($row->no_perjanjian); ?></td>
-                                                                                <td><?= esc_attr($row->nama_unit); ?></td>
-                                                                                <td><?= esc_attr($row->jumlah); ?></td>
-                                                                                <td><?= esc_attr($row->periode_mulai); ?></td>
-                                                                                <td><?= esc_attr($row->periode_selesai); ?></td>
-                                                                                <td><?= esc_attr($row->lessor); ?></td>
-                                                                                <td><?= esc_attr($row->keterangan); ?></td>
+                                                                                <td><?= "$row->no_perjanjian"; ?></td>
+                                                                                <td><?= "$row->nama_unit"; ?></td>
+                                                                                <td><?= "$row->jumlah"; ?></td>
+                                                                                <td><?= "$row->periode_mulai"; ?></td>
+                                                                                <td><?= "$row->periode_selesai"; ?></td>
+                                                                                <td><?= "$row->lessor"; ?></td>
+                                                                                <td><?= "$row->keterangan"; ?></td>
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
