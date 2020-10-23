@@ -350,13 +350,13 @@
                                                                         </thead>
                                                                         <tbody>
                                                                             <tr>
-                                                                                <td><?= $row->no_perjanjian; ?></td>
-                                                                                <td><?= $row->nama_unit; ?></td>
-                                                                                <td><?= $row->jumlah; ?></td>
-                                                                                <td><?= $row->periode_mulai; ?></td>
-                                                                                <td><?= $row->periode_selesai; ?></td>
-                                                                                <td><?= $row->lessor; ?></td>
-                                                                                <td><?= $row->keterangan; ?></td>
+                                                                                <td><?= esc_attr($row->no_perjanjian); ?></td>
+                                                                                <td><?= esc_attr($row->nama_unit); ?></td>
+                                                                                <td><?= esc_attr($row->jumlah); ?></td>
+                                                                                <td><?= esc_attr($row->periode_mulai); ?></td>
+                                                                                <td><?= esc_attr($row->periode_selesai); ?></td>
+                                                                                <td><?= esc_attr($row->lessor); ?></td>
+                                                                                <td><?= esc_attr($row->keterangan); ?></td>
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
